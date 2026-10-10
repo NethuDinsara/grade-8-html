@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grade 8 ICT - Classroom Kahoot Challenge</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background-color: #0f172a; color: #ffffff; min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; padding: 20px; }
+    
+    /* Top Header & Scoreboard */
+    header { display: flex; justify-content: space-between; align-items: center; background: #1e293b; padding: 15px 25px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); margin-bottom: 20px; }
+    .game-title { font-size: 1.5rem; font-weight: bold; color: #38bdf8; }
+    .q-counter { font-size: 1.2rem; background: #334155; padding: 6px 16px; border-radius: 20px; font-weight: 600; }
+    
+    .scoreboard { display: flex; gap: 15px; }
+    .team-card { background: #0f172a; padding: 8px 14px; border-radius: 12px; border: 1px solid #475569; text-align: center; min-width: 100px; }
+    .team-name { font-size: 0.85rem; color: #94a3b8; font-weight: bold; text-transform: uppercase; }
+    .team-score { font-size: 1.3rem; font-weight: bold; color: #f59e0b; margin: 2px 0; }
+    .score-btn { background: #334155; color: #fff; border: none; padding: 2px 8px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 0.9rem; margin: 0 2px; }
+    .score-btn:hover { background: #475569; }
+
+    /* Main Question Container */
+    main { flex: 1; display: flex; flex-direction: column; justify-content: center; max-width: 1200px; margin: 0 auto; width: 100%; }
+    .round-badge { align-self: center; background: #8b5cf6; color: #fff; padding: 6px 20px; border-radius: 20px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; font-size: 0.9rem; }
+    
+    .question-box { background: #1e293b; padding: 30px; border-radius: 20px; text-align: center; box-shadow: 0 15px 30px rgba(0,0,0,0.4); margin-bottom: 25px; border: 2px solid #334155; }
+    .question-text { font-size: 2.2rem; font-weight: 700; line-height: 1.3; color: #f8fafc; }
+
+    /* Options Grid (Kahoot Colors) */
+    .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 25px; }
+    .option-card { padding: 25px 20px; border-radius: 16px; display: flex; align-items: center; font-size: 1.6rem; font-weight: 600; cursor: pointer; transition: transform 0.15s ease, opacity 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+    .option-card:hover { transform: translateY(-3px); }
+    
+    .shape { font-size: 2rem; margin-right: 20px; opacity: 0.9; }
+    .opt-a { background-color: #e21b3c; color: white; }
+    .opt-b { background-color: #1368ce; color: white; }
+    .opt-c { background-color: #d89e00; color: white; }
+    .opt-d { background-color: #26890c; color: white; }
+
+    .dimmed { opacity: 0.25; transform: scale(0.98); }
+    .correct-answer { transform: scale(1.03); ring: 4px solid #ffffff; box-shadow: 0 0 30px rgba(255,255,255,0.6); animation: pulse 1s infinite alternate; }
+
+    @keyframes pulse {
+      from { box-shadow: 0 0 15px rgba(255,255,255,0.4); }
+      to { box-shadow: 0 0 35px rgba(255,255,255,0.9); }
+    }
+
+    /* Controls Bar */
+    footer { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; width: 100%; background: #1e293b; padding: 15px 25px; border-radius: 16px; }
+    .control-btn { padding: 12px 28px; border: none; border-radius: 12px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: background 0.2s; }
+    .btn-nav { background: #475569; color: white; }
+    .btn-nav:hover { background: #64748b; }
+    .btn-reveal { background: #f59e0b; color: #0f172a; font-size: 1.3rem; padding: 12px 40px; }
+    .btn-reveal:hover { background: #d97706; }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header with Scoreboard -->
+  <header>
+    <div>
+      <div class="game-title">🎮 Grade 8 ICT Challenge</div>
+    </div>
+    <div class="q-counter" id="q-counter">Question 1 / 24</div>
+    <div class="scoreboard">
+      <div class="team-card">
+        <div class="team-name">Team A</div>
+        <div class="team-score" id="score-1">0</div>
+        <button class="score-btn" onclick="addScore(1, 100)">+100</button>
+        <button class="score-btn" onclick="addScore(1, -50)">-50</button>
+      </div>
+      <div class="team-card">
+        <div class="team-name">Team B</div>
+        <div class="team-score" id="score-2">0</div>
+        <button class="score-btn" onclick="addScore(2, 100)">+100</button>
+        <button class="score-btn" onclick="addScore(2, -50)">-50</button>
+      </div>
+      <div class="team-card">
+        <div class="team-name">Team C</div>
+        <div class="team-score" id="score-3">0</div>
+        <button class="score-btn" onclick="addScore(3, 100)">+100</button>
+        <button class="score-btn" onclick="addScore(3, -50)">-50</button>
+      </div>
+      <div class="team-card">
+        <div class="team-name">Team D</div>
+        <div class="team-score" id="score-4">0</div>
+        <button class="score-btn" onclick="addScore(4, 100)">+100</button>
+        <button class="score-btn" onclick="addScore(4, -50)">-50</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Question Display -->
+  <main>
+    <div class="round-badge" id="round-badge">Round 1: HTML Basics</div>
+    <div class="question-box">
+      <div class="question-text" id="question-text">Loading Question...</div>
+    </div>
+
+    <div class="options-grid">
+      <div class="option-card opt-a" id="opt-0">
+        <span class="shape">▲</span><span id="opt-text-0">Option A</span>
+      </div>
+      <div class="option-card opt-b" id="opt-1">
+        <span class="shape">◆</span><span id="opt-text-1">Option B</span>
+      </div>
+      <div class="option-card opt-c" id="opt-2">
+        <span class="shape">●</span><span id="opt-text-2">Option C</span>
+      </div>
+      <div class="option-card opt-d" id="opt-3">
+        <span class="shape">■</span><span id="opt-text-3">Option D</span>
+      </div>
+    </div>
+  </main>
+
+  <!-- Bottom Control Panel -->
+  <footer>
+    <button class="control-btn btn-nav" onclick="prevQuestion()">◄ Previous</button>
+    <button class="control-btn btn-reveal" onclick="revealAnswer()">Show Answer 👁️</button>
+    <button class="control-btn btn-nav" onclick="nextQuestion()">Next Question ►</button>
+  </footer>
+
+  <script>
+    const questions = [
+      // Round 1: HTML Code Basics
+      { round: "Round 1: HTML Basics", q: "What does HTML stand for?", opts: ["Hyper Text Markup Language", "High Tech Modern Language", "Home Tool Markup Language", "Hyperlink Text Main Language"], ans: 0 },
+      { round: "Round 1: HTML Basics", q: "Which tag wraps the ENTIRE web page code from start to end?", opts: ["<web>", "<html>", "<body>", "<head>"], ans: 1 },
+      { round: "Round 1: HTML Basics", q: "Where does text written inside <title>...</title> appear?", opts: ["Inside the main body area", "On the Browser Tab / Title Bar", "At the bottom footer", "It is hidden and never seen"], ans: 1 },
+      { round: "Round 1: HTML Basics", q: "All visible web page content must be placed inside which tag?", opts: ["<head>", "<title>", "<body>", "<style>"], ans: 2 },
+      { round: "Round 1: HTML Basics", q: "Which tag makes text look BOLD?", opts: ["<i>", "<b>", "<center>", "<bold>"], ans: 1 },
+      { round: "Round 1: HTML Basics", q: "How do you write ITALIC (slanted) text in HTML?", opts: ["<i>...</i>", "<italic>...</italic>", "<b>...</b>", "<slant>...</slant>"], ans: 0 },
+      { round: "Round 1: HTML Basics", q: "Which tag centers text horizontally on the web page?", opts: ["<middle>", "<align>", "<center>", "<p>"], ans: 2 },
+      { round: "Round 1: HTML Basics", q: "Which simple Windows software can be used to write HTML code?", opts: ["MS Paint", "Calculator", "Notepad", "Windows Media Player"], ans: 2 },
+
+      // Round 2: Browsing & Navigation
+      { round: "Round 2: Web Browsing", q: "What happens to the mouse pointer when moved over a Hyperlink?", opts: ["Turns into an Arrow", "Turns into a Hand icon", "Turns into an Hourglass", "It disappears"], ans: 1 },
+      { round: "Round 2: Web Browsing", q: "Which keyboard shortcut opens a NEW TAB in a web browser?", opts: ["Ctrl + T", "Ctrl + N", "Ctrl + H", "Ctrl + B"], ans: 0 },
+      { round: "Round 2: Web Browsing", q: "Which feature allows you to save a web page address to open it quickly later?", opts: ["Download", "Bookmark / Favourite", "History", "Incognito"], ans: 1 },
+      { round: "Round 2: Web Browsing", q: "Which keyboard shortcut opens your browser HISTORY?", opts: ["Ctrl + H", "Ctrl + J", "Ctrl + Shift + N", "F11"], ans: 0 },
+
+      // Round 3: Syllabus Remix
+      { round: "Round 3: Syllabus Remix", q: "What two digital symbols does a computer use to store all data?", opts: ["1 and 2", "0 and 1", "A and B", "0 and 10"], ans: 1 },
+      { round: "Round 3: Syllabus Remix", q: "Convert the decimal number 13 into binary.", opts: ["1100₂", "1101₂", "1011₂", "1110₂"], ans: 1 },
+      { round: "Round 3: Syllabus Remix", q: "Which 15-pin blue computer port connects monitors/projectors?", opts: ["HDMI", "USB", "VGA", "RJ45"], ans: 2 },
+      { round: "Round 3: Syllabus Remix", q: "If a file attribute is set to 'Read-only', what does it mean?", opts: ["You cannot open it", "You can view it but cannot edit/save", "The file is hidden", "The file is deleted"], ans: 1 },
+      { round: "Round 3: Syllabus Remix", q: "In Word Processing, which shortcut UNDOES your last action?", opts: ["Ctrl + C", "Ctrl + Z", "Ctrl + Y", "Ctrl + X"], ans: 1 },
+      { round: "Round 3: Syllabus Remix", q: "Writing H₂O requires which text formatting tool?", opts: ["Superscript", "Subscript", "Highlight", "Strikethrough"], ans: 1 },
+      { round: "Round 3: Syllabus Remix", q: "Which Flowchart shape represents a DECISION box?", opts: ["Oval", "Parallelogram", "Diamond", "Rectangle"], ans: 2 },
+      { round: "Round 3: Syllabus Remix", q: "In Scratch, which block runs code ONLY IF a condition is True?", opts: ["repeat", "if...then", "ask...and wait", "set to"], ans: 1 },
+      { round: "Round 3: Syllabus Remix", q: "An AND Gate output is 1 ONLY when:", opts: ["Both inputs are 0", "One input is 1 and other is 0", "Both inputs are 1", "Output is always 0"], ans: 2 },
+      { round: "Round 3: Syllabus Remix", q: "Which Logic Gate turns 1 into 0, and 0 into 1?", opts: ["AND Gate", "OR Gate", "NOT Gate", "NAND Gate"], ans: 2 },
+
+      // Round 4: Final Boss Showdown
+      { round: "Round 4: Final Boss (200 pts!)", q: "Look at this code: <b><i>ICT</i></b>. How will 'ICT' look on screen?", opts: ["Plain ICT", "Bold only", "Italic only", "Both Bold AND Italic"], ans: 3 },
+      { round: "Round 4: Final Boss (200 pts!)", q: "Which HTML tag structure is written CORRECTLY?", opts: ["<title>Grade 8 ICT<title>", "<title>Grade 8 ICT</title>", "</title>Grade 8 ICT<title>", "<title>Grade 8 ICT>"], ans: 1 }
+    ];
+
+    let currentQIndex = 0;
+    let scores = [0, 0, 0, 0];
+    let isRevealed = false;
+
+    function renderQuestion() {
+      isRevealed = false;
+      const q = questions[currentQIndex];
+      
+      document.getElementById("round-badge").textContent = q.round;
+      document.getElementById("q-counter").textContent = `Question ${currentQIndex + 1} / ${questions.length}`;
+      document.getElementById("question-text").textContent = q.q;
+
+      for (let i = 0; i < 4; i++) {
+        const optEl = document.getElementById(`opt-${i}`);
+        const textEl = document.getElementById(`opt-text-${i}`);
+        textEl.textContent = q.opts[i];
+        optEl.classList.remove("dimmed", "correct-answer");
+      }
+    }
+
+    function revealAnswer() {
+      if (isRevealed) return;
+      isRevealed = true;
+      const correctAns = questions[currentQIndex].ans;
+
+      for (let i = 0; i < 4; i++) {
+        const optEl = document.getElementById(`opt-${i}`);
+        if (i === correctAns) {
+          optEl.classList.add("correct-answer");
+        } else {
+          optEl.classList.add("dimmed");
+        }
+      }
+    }
+
+    function nextQuestion() {
+      if (currentQIndex < questions.length - 1) {
+        currentQIndex++;
+        renderQuestion();
+      }
+    }
+
+    function prevQuestion() {
+      if (currentQIndex > 0) {
+        currentQIndex--;
+        renderQuestion();
+      }
+    }
+
+    function addScore(teamNum, points) {
+      scores[teamNum - 1] += points;
+      document.getElementById(`score-${teamNum}`).textContent = scores[teamNum - 1];
+    }
+
+    // Key Controls for Teacher (Left/Right arrow keys & Spacebar to reveal)
+    document.addEventListener('keydown', function(event) {
+      if (event.code === 'ArrowRight') nextQuestion();
+      if (event.code === 'ArrowLeft') prevQuestion();
+      if (event.code === 'Space') revealAnswer();
+    });
+
+    // Initialize first question
+    renderQuestion();
+  </script>
+</body>
+</html>

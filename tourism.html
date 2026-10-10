@@ -1,0 +1,1922 @@
+<html lang="en"><head><style>
+    .head-topic {
+        text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.91);
+    }
+
+    .sm-topic {
+        text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.91);
+    }
+
+    .sub-topic {
+        text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.91);
+    }
+
+    .page-para {
+        text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.91);
+    }
+	
+    .animated-button {
+  background-color:rgba(0, 123, 255, 0);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  /* border-radius: 5px; */
+  cursor: pointer;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom:-24px;
+  margin-left:-10px;
+}
+
+.arrows {
+  display: inline-block;
+  animation: move-arrows 1s infinite;
+}
+
+@keyframes  move-arrows {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animated-button:hover {
+  background-color:rgba(0, 87, 179, 0);
+}
+
+
+.popup-container{
+    position:relative;
+    display:inline-block;
+}
+
+/* Image */
+.popup-img{
+    width:100%;
+    max-width:420px;
+    height:auto;
+    border-radius:8px;
+}
+
+/* Close button */
+.popup-close{
+    position:absolute;
+    top:-10px;
+    right:-10px;
+    background:#fff;
+    border:none;
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    font-size:22px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,0.25);
+}
+
+/* Tablet */
+@media (max-width:768px){
+    .popup-img{
+        max-width:350px;
+    }
+}
+
+/* Mobile */
+@media (max-width:576px){
+
+    .popup-img{
+        max-width:92%;
+        border-radius:10px;
+    }
+
+    .popup-close{
+        width:32px;
+        height:32px;
+        font-size:20px;
+        top:-8px;
+        right:-8px;
+    }
+}
+
+
+/* NOTICE SECTION */
+.notice-section{
+    padding:50px 0;
+    background:#f8f9fa;
+    display:flex;
+    justify-content:center;
+}
+
+.notice-box{
+    background:white;
+    padding:25px;
+    border-left:5px solid #fbc834;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    border-radius:6px;
+    max-width:900px;
+    margin:auto;
+}
+
+.notice-title{
+    font-size:24px;
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+.notice-text {
+    font-size: 14px;
+    color: #555; /* fallback color for normal text */
+    font-weight: bold; /* make all text inside <p> bold */
+    margin-bottom: 10px;
+}
+
+/* specifically target <b> tags inside notice-text to change color */
+.notice-text b {
+    color: #a0522d; /* brown color */
+}
+
+.notice-btn{
+    margin-top:2px;
+    display:inline-block;
+    margin:-5px 0 12px 0;
+    padding:6px 12px;
+    border:1.5px solid #3b3b3b;
+    border-radius:5px;
+    background:#3b3b3b;
+    color:#fbc834;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.notice-btn:hover{
+    background:#fbc834;
+    color:#3b3b3b;
+    border:1.5px solid #fbc834;
+    text-decoration:none;
+}
+
+/* image */
+.notice-img{
+    width:100%;
+    max-width:260px;
+}
+
+.notice-text a {
+    font-size: 16px; /* adjust the size as needed */
+    font-weight: bold; /* optional, to keep it bold */
+    text-decoration: none; /* optional */
+}
+
+
+.notice-header{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px; /* reduce space between logo & text */
+    margin-bottom:8px;
+}
+
+.notice-logo{
+    width:32px; /* slightly smaller for better alignment */
+    height:auto;
+}
+
+/* remove extra spacing from heading */
+.notice-title{
+    margin:0; /* IMPORTANT */
+    font-size:24px;
+    font-weight:600;
+}
+
+/* footer section */
+.notice-footer{
+    margin-top:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+}
+
+.notice-header-logo{
+    width:50px !important;
+    height:auto;
+}
+
+
+/* small logo */
+.notice-footer-logo{
+    width:25px !important;
+    height:auto;
+    margin-top:-5px ;
+    margin-bottom:10px;
+}
+
+/* clickable link */
+.notice-footer-link{
+    font-size:14px;
+    font-weight:bold;
+    color:#2a6ecb;
+    text-decoration:none;
+    margin-top:-5px ;
+    margin-bottom:10px;
+}
+
+.notice-footer-link:hover{
+    text-decoration:underline;
+}
+
+/* special notice block */
+.notice-special{
+    margin-bottom:15px;
+}
+
+/* main text */
+.notice-special-text{
+    font-size:14px;
+    color:#333;
+    font-weight:500;
+    margin-bottom:10px;
+    line-height:1.6;
+}
+
+/* blue highlights */
+.highlight-blue{
+    color:#2a5db0;
+    font-weight:700;
+}
+
+/* bold black highlights */
+.highlight-bold{
+    font-weight:700;
+    color:#000;
+}
+
+/* date style */
+.notice-date{
+    font-size:12px;
+    color:#777;
+    margin-top:10px;
+}
+
+.notice-text span {
+    display: block;
+    }
+</style>
+
+
+
+
+
+<style>
+		
+        #chatbot-iframe {
+			position: fixed;
+			bottom: 0;
+			right: 0;
+			width: 400px;
+			height: 580px;
+			border: none;
+			z-index: 1000;
+			transition: width 0.3s ease, height 0.3s ease;
+			display: none; 
+		}
+
+		#chatbot-overlay {
+			position: fixed;
+			bottom: 0;
+			right: 80px;
+			width: 100px;
+			height: 200px;
+			background: transparent;
+			z-index: 1000;
+            transition: width 0.3s ease, height 0.3s ease;
+			cursor: pointer;
+		}
+
+		.animations_fix img {
+			width: 105px;
+			height: auto;
+		}
+
+		.scoreboard-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid white;
+    padding: 20px 10px;
+    border-radius: 15px;
+    width: fit-content;
+    margin: 30px auto;
+    background-color: transparent;
+    gap: 10px; /* Space between rows */
+    
+}
+
+/* Header */
+.header {
+    position: relative; /* Change to relative positioning */
+    background-color: transparent;
+    padding: 5px 10px; /* Add some padding for better spacing */
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 8px; /* Optional: Add rounded corners to match the wrapper */
+    /* Add spacing between the header and the scoreboard content */
+    margin-top: -10px;
+}
+
+/* Scoreboard Container */
+.scoreboard-container {
+    display: flex;
+    flex-direction: column; 
+    gap: 15px; /* Add space between each line */
+}
+
+/* Individual Scoreboard */
+.scoreboard {
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 10px; /* Add spacing between label and counter */
+}
+
+/* Label */
+.label {
+    font-size: 17px;
+    color: #fbc834;
+    white-space: nowrap;
+    color: #fbc834;
+    flex: 1; 
+    text-align: left;
+    margin: 0;
+}
+
+/* Flip Container */
+.flip-container {
+    display: flex;
+    gap: 2px;
+    justify-content: flex-start;
+}
+
+/* Flip Digit */
+.flip-digit {
+    display: inline-block;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    font-weight: bold;
+    width: 24px;
+    height: 36px;
+    line-height: 36px;
+    color: #fbc834;
+    background: #333;
+    border-radius: 3px;
+    text-align: center;
+}
+
+#counter3 .flip-digit:nth-child(1),
+#counter3 .flip-digit:nth-child(2) {
+    display: none;
+}
+
+
+#counter2 .flip-digit:nth-child(1) {
+    display: none;
+}
+
+
+
+@media (max-width: 768px) {
+    .scoreboard-wrapper {
+        padding: 10px;
+
+    }
+    
+    .header {
+        font-size: 12px;
+    }
+
+    .label {
+        font-size: 14px;
+    }
+
+    .flip-container {
+        justify-content: center; 
+        gap: 5px; 
+      
+    }
+
+    .flip-digit {
+        font-size: 16px; 
+        width: 20px;
+        height: 30px;
+        line-height: 30px;
+    }
+}
+
+#snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    color: white;
+    font-size: 1rem;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+@keyframes  fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+    </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-3LFRF8DHTQ&amp;cx=c&amp;gtm=4e6992"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=UA-8472280-1&amp;cx=c&amp;gtm=4e6992h1"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-GSZY489W7B&amp;cx=c&amp;gtm=4e6992h1"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-8472280-2"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+ gtag('config', 'UA-8472280-2');
+</script>
+
+
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-GSZY489W7B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GSZY489W7B');
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-8472280-1"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+ gtag('config', 'UA-8472280-1');
+</script>
+
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="user" content="">
+<meta name="user_organisation_type" content="">
+<meta name="csrf" content="VRYE1VWjLRuKUfgbKo2fLe1K76nQ3PI9KQb1eqXV">
+<meta name="api-base-url" content="https://www.sltda.gov.lk">
+
+<meta name="description" content="Sri Lanka Tourism Development Authority (SLTDA) is the government authority tasked with planning, development, regulation">
+
+<!-- Facebook -->
+<meta property="og:title" content="Sri Lanka Tourism Development Authority">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SLTDA">
+<meta property="og:description" content="Sri Lanka Tourism Development Authority (SLTDA) is the government authority tasked with planning, development, regulation">
+<meta property="og:image" content="https://www.sltda.gov.lk/images/sltda_logo.png">
+<meta property="og:url" content="https://www.sltda.gov.lk/en">
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://www.sltda.gov.lk/en">
+<meta property="twitter:title" content="Sri Lanka Tourism Development Authority">
+<meta property="twitter:description" content="Sri Lanka Tourism Development Authority (SLTDA) is the government authority tasked with planning, development, regulation">
+<meta property="twitter:image" content="https://www.sltda.gov.lk/images/sltda_logo.png">
+
+<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+
+
+<link href="https://www.sltda.gov.lk/css/slick.css" rel="stylesheet">
+<link href="https://www.sltda.gov.lk/css/slick-theme.css" rel="stylesheet">
+
+
+<!-- Bootstrap CSS -->
+<link href="https://www.sltda.gov.lk/css/app.css?id=10" rel="stylesheet">
+<script src="https://www.sltda.gov.lk/js/app.js?id=10"></script><style type="text/css">.img-uploader {
+  margin-bottom: 10px;
+}
+.img-uploader.multiple {
+  max-height: 50vh;
+  overflow: auto;
+  background-color: #eee;
+}
+.img-uploader.multiple .img-uploader-outer {
+  padding: 1rem !important;
+}
+.img-uploader-inner {
+  border: solid 5px #fff;
+}
+.img-uploader-img-wrap {
+  width: 100%;
+  padding-top: 100%;
+  position: relative;
+  background-color: #000;
+}
+.img-uploader-img-wrap img {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+.img-uploader.no-preview .img-uploader-inner {
+  border: none !important;
+  box-shadow: none !important;
+}
+.img-uploader.no-preview .img-uploader-img-wrap {
+  background-color: transparent;
+}
+.img-uploader-file-name {
+  font-size: 12px;
+  margin: 0;
+  padding: 5px 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}</style><style type="text/css">.img-uploader {
+  margin-bottom: 10px;
+}
+.img-uploader.multiple {
+  max-height: 50vh;
+  overflow: auto;
+  background-color: #eee;
+}
+.img-uploader.multiple .img-uploader-outer {
+  padding: 1rem !important;
+}
+.img-uploader-inner {
+  border: solid 5px #fff;
+}
+.img-uploader-img-wrap {
+  width: 100%;
+  padding-top: 100%;
+  position: relative;
+}
+.img-uploader-img-wrap img {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+.img-uploader.no-preview .img-uploader-inner {
+  border: none !important;
+  box-shadow: none !important;
+}
+.img-uploader-file-name {
+  font-size: 12px;
+  margin: 0;
+  padding: 5px 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.btn-custom {
+  padding: 2px 10px;
+}</style>
+
+
+<script src="https://www.sltda.gov.lk/js/slick.js"></script>
+<script src="https://www.sltda.gov.lk/js/anime.min.js"></script>
+ <script src="https://www.sltda.gov.lk/js/jquery.scrolly.js"></script>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&amp;family=Roboto:wght@100&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Noto Sans Sinhala" rel="stylesheet">
+
+
+<link rel="icon" href="https://www.sltda.gov.lk/images/favicon-32x32.png" type="image/x-icon">
+<title>SLTDA | Sri Lanka Tourism Development Authority</title>
+
+<title>sltda-website</title>
+
+<style>
+  .navbar-light .navbar-nav .nav-item {
+    padding: 0 10px;
+  }
+  .floating-container {
+    position: fixed;
+    right: 14px;
+    top: 5rem;
+    cursor: pointer
+}
+  .lazyload {
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .lazyloaded {
+    opacity: 1;
+  }
+
+</style>
+
+</head>
+
+<body>
+<div id="snow-container"></div>
+    <!-- <div class="animations_fix d-block d-sm-block">
+		<div id="chatbot-overlay" onclick="toggleChat()">
+			<img src="https://www.sltda.gov.lk/images/isla.png" alt="Chatbot Icon" />
+		</div>
+	</div> -->
+
+	<!--<iframe id="chatbot-iframe" src="https://www.chatbot.nationalholidayresorts.lk" title="Chatbot"></iframe>-->
+
+	<script>
+		window.onload = function() {
+        const currentUrl = window.location.href;
+        
+        const iframe = document.getElementById('chatbot-iframe'); 
+        iframe.contentWindow.postMessage({ currentUrl: currentUrl }, '*');
+    };
+function toggleChat() {
+    var chatWidget = document.getElementById("chatbot-iframe");
+    var chatbotImage = document.getElementById("chatbot-overlay");
+
+    if (chatWidget.style.display === "none" || chatWidget.style.display === "") {
+        chatWidget.style.display = "block"; // Show the chat widget
+        chatbotImage.style.display = "none"; // Hide the chat toggle image
+
+        localStorage.setItem('chatOpen', 'true'); // Store chat open state
+        localStorage.setItem('userOpened', 'true'); // Mark that the user manually opened the chat
+    } else {
+        chatWidget.style.display = "none"; // Hide the chat widget
+        chatbotImage.style.display = "block"; // Show the chat toggle image
+
+        localStorage.setItem('chatOpen', 'false'); // Store chat close state
+        localStorage.setItem('userOpened', 'false'); // Reset user-opened flag
+    }
+}
+		// Close chat when clicking outside the iframe
+		document.addEventListener('click', function(event) {
+			const chatWidget = document.getElementById("chatbot-iframe");
+			const chatbotImage = document.getElementById("chatbot-overlay");
+
+			// Check if the click is outside the iframe and the toggle image
+			if (!chatWidget.contains(event.target) && !chatbotImage.contains(event.target) && chatWidget.style.display === "block") {
+				chatWidget.style.display = "none"; // Hide the chat widget
+				chatbotImage.style.display = "block"; // Show the chat toggle image
+			}
+		});
+
+        
+    function chatbotNavigate() {
+        localStorage.setItem('chatbotNavigation', 'true');
+    }
+
+    // Check chat state on page load, but only open if navigating
+    window.addEventListener('load', function () {
+        const chatbotContainer = document.getElementById('chatbot-iframe');
+        const chatbotWidget = document.getElementById('chatbot-overlay');
+        const chatOpen = localStorage.getItem('chatOpen');
+        const hasNavigated = localStorage.getItem('hasNavigated');
+
+        if (chatOpen === 'true' && hasNavigated === 'true') {
+            chatbotContainer.style.display = 'block';
+            chatbotWidget.style.display = 'none'; // Hide the girl's image (widget)
+        } else {
+            chatbotContainer.style.display = 'none';
+            chatbotWidget.style.display = 'block'; // Show the girl's image (widget)
+        }
+
+        // Set the flag to indicate navigation occurred
+        localStorage.setItem('hasNavigated', 'true');
+    });
+
+    // Clear the hasNavigated flag when the window or tab is closed
+    window.addEventListener('beforeunload', function () {
+        localStorage.removeItem('hasNavigated');
+    });
+
+    function closeChat() {
+
+// console.log('cljsdjfsdjofs');
+
+    var chatWidget = document.getElementById("chatbot-iframe");
+    var chatbotImage = document.getElementById("chatbot-overlay");
+
+    chatWidget.style.display = "none"; // Hide the chat widget
+    chatbotImage.style.display = "block"; // Show the chatbot image
+
+    localStorage.setItem('chatOpen', 'false'); // Store chat close state
+    localStorage.setItem('userOpened', 'false'); // Reset user-opened flag
+}
+
+
+     // Listen for close event from iframe
+     window.addEventListener('message', function(event) {
+
+        // console.log('closed');
+
+        if (event.data === 'closeChat') {
+            closeChat();
+        }
+        });
+
+
+		document.addEventListener("DOMContentLoaded", function() {
+			let lazyImages = [].slice.call(document.querySelectorAll("img.lazyload"));
+			
+			if ("IntersectionObserver" in window) {
+				let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+					entries.forEach(function(entry) {
+						if (entry.isIntersecting) {
+							let lazyImage = entry.target;
+							lazyImage.src = lazyImage.dataset.src;
+							lazyImage.classList.remove("lazyload");
+							lazyImage.classList.add("lazyloaded");
+							lazyImageObserver.unobserve(lazyImage);
+						}
+					});
+				});
+
+				lazyImages.forEach(function(lazyImage) {
+					lazyImageObserver.observe(lazyImage);
+				});
+			} else {
+				// Fallback for older browsers
+				lazyImages.forEach(function(lazyImage) {
+					lazyImage.src = lazyImage.dataset.src;
+					lazyImage.classList.remove("lazyload");
+					lazyImage.classList.add("lazyloaded");
+				});
+			}
+		});
+
+		document.addEventListener("DOMContentLoaded", () => {
+    const counters = [
+     
+        { id: "counter3", target: 31885},  //month count
+        { id: "counter2", target: 1567007}   //2026 count
+    ];
+
+    counters.forEach((counterData) => {
+        const counterElement = document.getElementById(counterData.id);
+        const targetNumber = counterData.target;
+        const duration = 3000; // Total duration in milliseconds
+        const interval = 50; // Time between updates in ms
+        const steps = Math.floor(duration / interval); // Total number of updates
+        const exactIncrement = targetNumber / steps; // Exact floating-point increment
+
+        let currentNumber = 0;
+
+        // Initialize the display with 8 placeholder digits
+        const initializeDigits = (number) => {
+            const digits = number.toString().padStart(8, "0").split("");
+            counterElement.innerHTML = "";
+            digits.forEach((digit) => {
+                const digitElement = document.createElement("div");
+                digitElement.className = "flip-digit";
+                digitElement.textContent = digit;
+                counterElement.appendChild(digitElement);
+            });
+        };
+
+        // Update a specific digit with a flip effect
+        const flipDigit = (digitElement, newDigit) => {
+            digitElement.classList.add("flip-animation");
+            setTimeout(() => {
+                digitElement.textContent = newDigit;
+                digitElement.classList.remove("flip-animation");
+            }, 250); // Half of animation duration
+        };
+
+        // Incrementally update the counter
+        const updateCounter = () => {
+            if (currentNumber < targetNumber) {
+                currentNumber = Math.min(currentNumber + exactIncrement, targetNumber); // Ensure we don't overshoot
+                const roundedNumber = Math.floor(currentNumber); // Safely round down for display
+
+                const currentDigits = roundedNumber.toString().padStart(8, "0").split("");
+                const digitElements = counterElement.children;
+                currentDigits.forEach((newDigit, index) => {
+                    const digitElement = digitElements[index];
+                    if (digitElement.textContent !== newDigit) {
+                        flipDigit(digitElement, newDigit);
+                    }
+                });
+
+                setTimeout(updateCounter, interval);
+            } else {
+                // Final adjustment to match exactly the target
+                currentNumber = targetNumber;
+                const currentDigits = targetNumber.toString().padStart(8, "0").split("");
+                const digitElements = counterElement.children;
+                currentDigits.forEach((newDigit, index) => {
+                    const digitElement = digitElements[index];
+                    flipDigit(digitElement, newDigit);
+                });
+            }
+        };
+
+        initializeDigits(0);
+        updateCounter();
+    });
+});
+
+    const currentDateElement = document.getElementById("currentDate");
+    const currentYearElement = document.getElementById("currentYear");
+    const currentMonthElement = document.getElementById("currentMonth");
+
+    currentDateElement.textContent = `As of August 27,2026`;
+    currentYearElement.textContent = `Arrivals 2026`;
+    currentMonthElement.textContent = `Arrivals August`;
+
+const snowContainer = document.getElementById('snow-container');
+
+function createSnowflake() {
+    const snowflake = document.createElement('div');
+    snowflake.classList.add('snowflake');
+    snowflake.textContent = '❄'; // You can use other symbols or shapes
+    snowflake.style.left = Math.random() * window.innerWidth + 'px';
+    snowflake.style.animationDuration = Math.random() * 3 + 2 + 's'; // Between 2-5 seconds
+    snowflake.style.fontSize = Math.random() * 10 + 10 + 'px'; // Between 10-20px
+
+    snowContainer.appendChild(snowflake);
+
+    // Remove snowflake after animation
+    setTimeout(() => {
+        snowflake.remove();
+    }, 5000); // Match with the animation duration
+}
+
+setInterval(createSnowflake, 100); // Add a new snowflake every 100ms
+
+
+	</script>
+    <a href="#" id="scroll" style="display: inline;"><span></span></a>
+<div id="header"><div class="preloader show"><img src="https://www.sltda.gov.lk/images/sltda-logo.png" width="60" alt=""><div class="loader"></div></div> <div class="row top-bar no-gutters"><div class="col-sm-12"><div class="container-fluid"></div></div></div> <div class="row no-gutters"><div class="col-sm-12"><nav class="navbar navbar-expand-lg navbar-light fixed-header"><div class="container-fluid"><a href="https://www.sltda.gov.lk/en" class="navbar-brand"><img src="https://www.sltda.gov.lk/images/sltda-logo.png" width="60" alt=""></a> <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler collapsed"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <div id="navbarSupportedContent" class="collapse navbar-collapse search-animate"><ul class="navbar-nav ml-auto"><li class="nav-item"><a href="https://www.sltda.gov.lk" class="nav-link animate">Home</a></li> <li class="nav-item dropdown"><a href="https://www.sltda.gov.lk/en/about-us" id="navbarDropdown" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-link animate">
+                                        ABOUT US
+                                    </a></li> <li class="nav-item dropdown"><a href="https://www.sltda.gov.lk/en/statistics" id="navbarDropdown" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-link animate">
+                                        STATISTICS
+                                    </a></li> <li class="nav-item dropdown"><a href="https://www.sltda.gov.lk/en/sustainable-tourism" id="navbarDropdown" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-link animate">
+                                        Sustainability
+                                    </a></li> <li class="nav-item dropdown"><a href="https://www.sltda.gov.lk/en/investor-relations-unit" id="navbarDropdown" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-link animate">
+                                        Investments
+                                    </a></li> <li class="nav-item dropdown"><a href="https://www.sltda.gov.lk/en/download-2" id="navbarDropdown" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-link animate">
+                                        DOWNLOADS
+                                    </a></li> <li class="nav-item dropdown"><a href="https://www.sltda.gov.lk/en/contact" id="navbarDropdown" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-link animate">
+                                        CONTACT US
+                                    </a></li> <li class="nav-item"><a href="https://www.sltda.gov.lk/en/register-with-us" class="nav-link bordered-nav-link animate">REGISTER WITH SLTDA</a></li></ul> <form method="GET" action="https://www.sltda.gov.lk/en/search" class="form-inline my-2 my-lg-0"><input type="search" name="search" placeholder="Search" aria-label="Search" class="form-control search-input mr-sm-2"> <a href="#" class="search-btn"><img src="https://www.sltda.gov.lk/images/search-icon.svg" width="22" alt="" class="tog-icon-search"><i class="fas fa-times-circle tog-icon-close"></i></a></form> <form onchange="javascript:location.href = getElementById('exampleFormControlSelect1').value;" class="form-inline my-2 my-lg-0 w-auto"><select id="exampleFormControlSelect1" class="form-control language"><option value="https://www.sltda.gov.lk/en" selected="selected">English</option> <option value="https://www.sltda.gov.lk/si">සිංහල</option> <option value="https://www.sltda.gov.lk/ta">தமிழ்</option></select></form></div></div></nav></div></div></div>
+
+
+<script>
+    const header = new Vue({
+        el: '#header',
+        data(){
+            return{
+                imgUrl: "https://www.sltda.gov.lk/images/sltda-logo.png"
+            }
+        },
+        mounted(){
+
+        }
+    });
+    $(function() {
+        // ------------------------------------------------------- //
+        // Multi Level dropdowns
+        // ------------------------------------------------------ //
+        $("ul.dropdown-menu [data-toggle='dropdown']").on("click", function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            $(this).siblings().toggleClass("show");
+
+
+            if (!$(this).next().hasClass('show')) {
+                $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+            }
+            $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+                $('.dropdown-submenu .show').removeClass("show");
+            });
+
+        });
+        /*$(".dropdown-link").click(function () {
+            var getPageLink = $(this).attr('href');
+            console.log(getPageLink);
+            window.location = getPageLink;
+        });*/
+    });
+
+    $(window).scroll(function(){
+        if ($(window).scrollTop() >= 20) {
+            $('.navbar').addClass('fixed-header');
+            $('.main-slide').addClass('add-margin');
+        }
+        else {
+            $('.navbar').removeClass('fixed-header');
+            $('.main-slide').removeClass('add-margin');
+        }
+    });
+
+    $(document).ready(function () {
+
+        $(window).scroll(function(){
+            if ($(this).scrollTop() > 100) {
+                $('#scroll').fadeIn();
+            } else {
+                $('#scroll').fadeOut();
+                /*$('.show-tog-btn').css( "display", "none" );
+                $('.nav-block-outer').removeClass('hide-menu');*/
+            }
+        });
+
+    });
+</script>
+<!-- fuel pop up 04/01/23 -->
+<script>
+    
+    // $(function() {
+    //     $('#basicExampleModal').modal('show');
+    // });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="row no-gutters home-carousel">
+    <div class="col-md-12 carousel-img">
+        <video autoplay="" muted="" loop="" id="coverVideo" class="w-100">
+            <source src="https://www.sltda.gov.lk/videos/new-banner-video.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="row no-gutters carousel-img-text align-items-center justify-content-center">
+        <div class="col-md-11">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row no-gutters welcome-animation animate" style="top: -20px;">
+                            <div class="col-md-12">
+                                <h1 class="head-topic">Welcome</h1>
+                                <h2 class="sm-topic">To the Corporate Website of the</h2>
+                                <h2 class="sub-topic">Success Academy Kelaniya</h2>
+                            </div>
+                            <div class="col-lg-10 col-md-12">
+                                <p class="page-para">
+                                    Sri Lanka Tourism Development Authority (SLTDA) is the government
+                                    authority
+                                    tasked
+                                    with planning, development, regulation, and policy implementation of
+                                    tourism and
+                                    related industries. Prior to SLTDA being established in 2007, these
+                                    functions
+                                    primarily resided with the organization known as Ceylon Tourist
+                                    Board/Sri Lanka
+                                    Tourist Board/Sri Lanka Tourism Board.                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="collapse" id="sliderCard">
+                            <div class="card card-body slider-card">
+                                <h1>Vision</h1>
+                                <div class="welcome-img-para">
+                                    <p class="vision-para">To be recognized as the world’s finest island for memorable, authentic and
+                                        diverse experiences.</p>
+                                </div>
+                                <h1>Mission</h1>
+                                <p class="vision-para">To be a high-value destination offering extraordinary experiences that
+                                    reflect
+                                    Sri Lanka’s natural and cultural heritage, are socially inclusive and
+                                    environmentally responsible, and provide economic benefits to communities
+                                    and
+                                    the country.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <div class="row no-gutters align-items-center h-100">
+                            <div class="video-play-btn" id="VideoBtn" onclick="videoPlay()"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row no-gutters slider-btn-border" style="top: -20px;">
+                    <div class="col-lg-4">
+                        <div class="slider-read-btn" style="margin-top: -10px;">
+                            <a data-toggle="collapse" href="#sliderCard" role="button" aria-expanded="false" aria-controls="sliderCard">
+                                <i class="fas fa-location-arrow"></i> Read More                                <span class="line"></span>
+                            </a>
+
+                            <div class="scoreboard-wrapper" style="margin-left: -4px;">
+                                
+                                <div class="scoreboard-container">
+                                    <div class="scoreboard">
+                                        <div id="currentYear" class="label">Arrivals 2026</div>
+                                        <div id="counter2" class="flip-container"><div class="flip-digit">0</div><div class="flip-digit">1</div><div class="flip-digit">5</div><div class="flip-digit">6</div><div class="flip-digit">7</div><div class="flip-digit">0</div><div class="flip-digit">0</div><div class="flip-digit">7</div></div>
+                                    </div>
+                                    <div class="scoreboard">
+                                        <div id="currentMonth" class="label">Arrivals September</div>
+                                        <div id="counter3" class="flip-container"><div class="flip-digit">0</div><div class="flip-digit">0</div><div class="flip-digit">0</div><div class="flip-digit">3</div><div class="flip-digit">1</div><div class="flip-digit">8</div><div class="flip-digit">8</div><div class="flip-digit">5</div></div>
+                                    </div>
+                                    <div id="currentDate" class="header">As of September 06, 2026</div>
+                                 
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    
+                </div>
+                <br>
+                <div class="row">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+<br>
+
+
+        <div class="col-md-11 position-relative">
+            <div class="container-fluid">
+                <div class="scroll-downs d-none d-lg-block">
+                    <div class="mousey">
+                        <div class="scroller"></div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    var coverVideo = document.getElementById("coverVideo");
+    var VideoBtn = document.getElementById("VideoBtn");
+
+
+    function videoPlay() {
+        VideoBtn.classList.toggle("playBtn");
+        if (coverVideo.paused) {
+            coverVideo.play();
+        } else {
+            coverVideo.pause();
+        }
+    }
+
+
+</script>
+            
+    <!--popup-->
+
+<!-- IMAGE POPUP -->
+<!-- <div class="modal fade" id="mainpopupnew" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    
+    <div class="modal-content bg-transparent border-0 shadow-none text-center">
+
+      <div class="modal-body p-0">
+
+        <div class="popup-container">
+
+          <button type="button"
+                  class="popup-close"
+                  data-dismiss="modal"
+                  aria-label="Close">
+            &times;
+          </button>
+
+          <a href="https://tourismfuel.sltda.gov.lk/" target="_blank">
+            <img 
+              src="https://www.sltda.gov.lk/images/Notice_regarding_fuel.jpg" 
+              class="popup-img"
+              alt="popup image">
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div> -->
+
+<!-- IMAGE POPUP -->
+<div class="modal fade" id="mainpopupnew" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    
+    <div class="modal-content bg-transparent border-0 shadow-none text-center">
+
+      <div class="modal-body p-0">
+
+        <div class="popup-container">
+
+          <button type="button" class="popup-close" data-dismiss="modal" aria-label="Close" style="z-index: 1051;">
+            ×
+          </button>
+
+          <a href="tel:1912">
+            <img src="https://www.sltda.gov.lk/images/weather_assistance_hotline.png" class="popup-img" alt="Weather Assistance Hotline Popup Image">
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+    
+
+
+    <div id="welcome-sec"><div id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade"><div role="document" class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="mb-n3 mb-xl-n3 mb-lg-n3 mb-md-n3 p-0"><button type="button" data-dismiss="modal" aria-label="Close" class="close pr-2 p-1" style="color: black; font-size: xx-large;"><span aria-hidden="true">×</span></button></div> <div class="modal-body"><h6 id="exampleModalLongTitle" class="modal-title text-center fw-bold text-warning bg-dark py-2" style="font-family: &quot;Lucida Sans Unicode&quot;;"><b>FUEL ASSISTANCE PROGRAM</b></h6> <hr class="mt-1"> <ul class="pr-2"><li class="text-justify pr-3">More Details:- <a href="https://www.sltda.gov.lk/en/fuel-assistance-program" target="_blank">Click Here.</a></li></ul> <h6 id="exampleModalLongTitle" class="modal-title text-center fw-bold text-warning bg-dark py-2" style="font-family: &quot;Lucida Sans Unicode&quot;;"><b>THE SOFT LIQUOR PERMISSION FOR SLTDA REGISTERED TOURIST ESTABLISHMENTS</b></h6> <hr class="mt-1"> <ul class="pr-2"><li class="text-justify mb-1 pr-3">Soft Liquor Request letter format:- <a href="https://www.sltda.gov.lk/storage/common_media/Annex2- Soft Liquor Request letter format4005593013.docx" target="_blank"> Download</a></li> <li class="text-justify pr-3">More Details:-<a href="https://sltda.gov.lk/en/important-notices" target="_blank"> Important Notices</a></li></ul> <p></p> <div><button button="" type="button" data-dismiss="modal" class="btn btn-warning">Thank You..!</button></div></div></div></div></div> <div class="notice-section"><div class="container"><div class="row justify-content-center"><div class="col-lg-10 col-md-11"><div class="notice-box text-center"><h3 class="notice-title">Tourism Fuel QR</h3> <p class="notice-text">
+                        Please visit the link below to apply for your <b>Vehicle</b> QR quota. 
+                        Upon submission, you will receive a confirmation email. 
+                        <span>The QR code will be issued after validation of your itinerary by the allocation team.</span>
+                        This facility is available for valid SLTDA license holders for 2025 and 2026.
+                    </p> <p class="notice-text"><img src="images/sltda_logo.png" alt="SLTDA Logo" class="notice-header-logo"> <a href="https://tourismfuel.sltda.gov.lk/" target="_blank">
+                        tourismfuel.sltda.gov.lk
+                    </a></p> <p class="notice-text"><span>Please carry your supporting documents when visiting the shed with the QR code, in case verification is required.</span> <span>To avoid QR scan conflicts at fuel stations, all users are advised to carry a <u>printed QR letter</u> when visiting the fuel station.
+                        CEYPETCO has agreed to honor the printed QR letter and retain it for their reconciliation records.</span></p> <div class="notice-footer"><img src="images/Ceylon_Petroleum_Corporation_logo.ico" alt="Ceypetco Logo" class="notice-footer-logo"> <a href="https://www.sltda.gov.lk/storage/common_media/Tourism_Designated_Fuel_Stations_22-03-2026.pdf" target="_blank" class="notice-footer-link">
+                            Tourism Designated Fuel Stations
+                        </a></div> <div class="notice-footer"><img src="images/Ceylon_Petroleum_Corporation_logo.ico" alt="Ceypetco Logo" class="notice-footer-logo"> <a href="https://www.sltda.gov.lk/storage/common_media/CPC_Regional_Details.pdf" target="_blank" class="notice-footer-link">
+                            CEYPETCO Regional Contact Details
+                        </a></div> <p class="notice-text">
+                        If your registration number is not listed, please contact the respective officer handling 
+                        your category by visiting the section below on our website.
+                    </p> <a href="https://www.sltda.gov.lk/en/register-with-us" target="_blank" class="notice-btn">
+                        Register With Us
+                    </a> <p class="notice-text">
+                        For any further clarification please contact the 1912 hotline.
+                     </p> <p class="notice-text">
+                        For <b>Generators</b>, a weekly QR code will be issued with the allocated quota. This facility is available for valid SLTDA license holders for 2025 and 2026.
+                        You may apply for your generator fuel quota via the link below:
+                  
+                    </p> <p class="notice-text"><a href="https://docs.google.com/forms/d/e/1FAIpQLSeLEvxEcxLYofmCjj5UYkuYrEF415QdbPRnQFw1Ei8YYR9NyQ/viewform?usp=pp_url&amp;entry.1528637477=Colombo&amp;entry.551049976=SLTDA/SQA/&amp;entry.1182351177=KVA-&amp;entry.1018826242=Diesel" target="_blank" class="notice-footer-link">
+        Generator Fuel QR Request
+    </a></p></div></div></div></div></div> <div class="section-2"><div class="row no-gutters fade-in justify-content-center animate"><div class="col-md-11 welcome-slider"><div class="container-fluid"><section class="regular slider slick-initialized slick-slider"><div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 992px; transform: translate3d(0px, 0px, 0px);"><div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 248px;"><div><div class="wel-slide-height" style="width: 100%; display: inline-block;"><div class="welcome-icon-link"><a href="https://www.immigration.gov.lk/" tabindex="0"><div class="img-wrap"><img data-src="https://www.sltda.gov.lk/storage/common_media/g3388496347 new873346818.jpg" alt="welcome slider image" class="lazyloaded" src="https://www.sltda.gov.lk/storage/common_media/g3388496347 new873346818.jpg"></div> <div class="wel-slide"><div><div class="border-top-div"></div> <p>Applicable to citizens of China, India, Indonesia, Russia, Thailand, Malaysia, and Japan.(For more details, Please visit immigration website)</p></div></div></a></div></div></div></div><div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 248px;"><div><div class="wel-slide-height" style="width: 100%; display: inline-block;"><div class="welcome-icon-link"><a href="https://www.sltda.gov.lk/storage/common_media/Advisory%20on%20Flight%20Disruptions%20and%20Guest%20Departure%20Management.pdf" tabindex="0"><div class="img-wrap"><img data-src="https://www.sltda.gov.lk/storage/common_media/airport_scene_compressed_348x2351656806920.png" alt="welcome slider image" class="lazyloaded" src="https://www.sltda.gov.lk/storage/common_media/airport_scene_compressed_348x2351656806920.png"></div> <div class="wel-slide"><div><div class="border-top-div"></div> <p>Advisory on Flight Disruptions and Guest Departure Management 01.03.2026</p></div></div></a></div></div></div></div><div class="slick-slide slick-active" data-slick-index="2" aria-hidden="false" style="width: 248px;"><div><div class="wel-slide-height" style="width: 100%; display: inline-block;"><div class="welcome-icon-link"><a href="https://www.sltda.gov.lk/storage/common_media/Policy%20Paper.pdf" tabindex="0"><div class="img-wrap"><img data-src="https://www.sltda.gov.lk/storage/common_media/Policy Paper997538711.jpg" alt="welcome slider image" class="lazyloaded" src="https://www.sltda.gov.lk/storage/common_media/Policy Paper997538711.jpg"></div> <div class="wel-slide"><div><div class="border-top-div"></div> <p>Tourism Policy Paper As at 18.02.2026</p></div></div></a></div></div></div></div><div class="slick-slide slick-active" data-slick-index="3" aria-hidden="false" style="width: 248px;"><div><div class="wel-slide-height" style="width: 100%; display: inline-block;"><div class="welcome-icon-link"><a href="https://www.sltda.gov.lk/storage/common_media/TDL_Notice_14_07_2025.pdf" tabindex="0"><div class="img-wrap"><img data-src="https://www.sltda.gov.lk/storage/common_media/new2482270987.png" alt="welcome slider image" class="lazyloaded" src="https://www.sltda.gov.lk/storage/common_media/new2482270987.png"></div> <div class="wel-slide"><div><div class="border-top-div"></div> <p>Important TDL Notice 14.07.2025</p></div></div></a></div></div></div></div></div></div></section></div></div></div></div> <section id="story-freext" class="d-none d-md-block" style="position: relative; height: auto; width: 100%;"><div data-velocity="-.1" data-fit="200" class="parallax" style="background-position: 50% -13.85px;"></div> <div data-velocity="-.15" data-fit="600" class="parallax" style="background-position: 50% 279.225px;"></div> <div data-velocity="-.0" data-fit="300" class="parallax" style="background-position: 50% 300px;"></div> <div data-velocity="-.3" data-fit="800" class="parallax" style="background-position: 50% 158.45px;"></div></section> <div class="mobile-background"><div class="section-3"><div class="row no-gutters fade-in align-items-center animate"><div class="col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 col-md-12"><div class="container-fluid"><div class="row no-gutters highlight-back"><div class="col-md-12"><h1 class="head-topic text-uppercase text-center">Highlights</h1></div></div> <div class="row no-gutters justify-content-center"><div class="col-sm-11"><section class="highlights-regular slider slick-initialized slick-slider"><div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 840px; transform: translate3d(0px, 0px, 0px);"><div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 280px;"><div><div class="wel-slide-img" style="width: 100%; display: inline-block;"><div class="position-relative highlight-pad"><a target="_blank" href="https://sltda.gov.lk/en/important-notices" tabindex="0"><div class="position-relative overflow-hidden highlight-img-border"><img data-src="https://www.sltda.gov.lk/storage/common_media/Noticesblank2207184785.png" alt="highlight slider image" class="lazyloaded" src="https://www.sltda.gov.lk/storage/common_media/Noticesblank2207184785.png"> <div class="highlights-overlay"></div></div> <div class="highlight-slide"><h6>
+                                                                            Notices
+                                                                            <button class="animated-button" tabindex="0"><span class="arrows">&gt;&gt;</span></button></h6></div></a></div> <div class="position-relative highlight-pad"><a target="_blank" href="tourism-development-levy" tabindex="0"><div class="position-relative overflow-hidden highlight-img-border"><img src="https://www.sltda.gov.lk/storage/common_media/2-Exemption of Tourism Development Levy1743293212.jpg" alt="highlight slider image"> <div class="highlights-overlay"></div></div> <div class="highlight-slide"><h6>
+                                                                    Tourism Development Levy
+                                                                </h6></div></a></div></div></div></div><div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 280px;"><div><div class="wel-slide-img" style="width: 100%; display: inline-block;"><div class="position-relative highlight-pad"><a target="_blank" href="tourism-news" tabindex="0"><div class="position-relative overflow-hidden highlight-img-border"><img data-src="https://www.sltda.gov.lk/storage/common_media/NewsNew21816329354.png" alt="highlight slider image" class="lazyloaded" src="https://www.sltda.gov.lk/storage/common_media/NewsNew21816329354.png"> <div class="highlights-overlay"></div></div> <div class="highlight-slide"><h6>
+                                                                            News
+                                                                            <button class="animated-button" tabindex="0"><span class="arrows">&gt;&gt;</span></button></h6></div></a></div> <div class="position-relative highlight-pad"><a target="_blank" href="https://www.sltda.gov.lk/en/sri-lanka-tourism-development-authority-visa-related" tabindex="0"><div class="position-relative overflow-hidden highlight-img-border"><img src="https://www.sltda.gov.lk/storage/common_media/visa_rlt3943230656.jpg" alt="highlight slider image"> <div class="highlights-overlay"></div></div> <div class="highlight-slide"><h6>
+                                                                    Visa Related
+                                                                </h6></div></a></div></div></div></div><div class="slick-slide slick-active" data-slick-index="2" aria-hidden="false" style="width: 280px;"><div><div class="wel-slide-img" style="width: 100%; display: inline-block;"><div class="position-relative highlight-pad"><a target="_blank" href="https://www.sltda.gov.lk/en/sri-lanka-tourism-development-authority-publications" tabindex="0"><div class="position-relative overflow-hidden highlight-img-border"><img data-src="https://www.sltda.gov.lk/storage/common_media/MicrosoftTeams-image (2)309100565.png" alt="highlight slider image" class="lazyloaded" src="https://www.sltda.gov.lk/storage/common_media/MicrosoftTeams-image (2)309100565.png"> <div class="highlights-overlay"></div></div> <div class="highlight-slide"><h6>
+                                                                            Publications
+                                                                   
+                                                                        </h6></div></a></div> <div class="position-relative highlight-pad"><a target="_blank" href="https://www.sltda.gov.lk/en/exhibitions-others" tabindex="0"><div class="position-relative overflow-hidden highlight-img-border"><img src="https://www.sltda.gov.lk/storage/common_media/exhibition_home467103820.jpg" alt="highlight slider image"> <div class="highlights-overlay"></div></div> <div class="highlight-slide"><h6>
+                                                                    Exhibitions &amp; Others
+                                                                </h6></div></a></div></div></div></div></div></div></section></div></div></div></div></div></div> <div class="section-4"><div class="row no-gutters justify-content-center align-items-center"><div class="col-sm-11"><div class="container-fluid"><section class="link-slider slider animated slick-initialized slick-slider"><button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="">Previous</button><div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 3542px; transform: translate3d(-1012px, 0px, 0px);"><div class="slick-slide slick-cloned" data-slick-index="-4" aria-hidden="true" tabindex="-1" style="width: 253px;"><div><div class="link-slide animate" style="width: 100%; display: inline-block;"><div class="link-slide-text"><ul><li><a target="_blank" href="https://www.gov.lk/" tabindex="-1">
+                                                                Government of Sri Lanka Official Web Portal
+                                                                </a></li> <li><a target="_blank" href="https://www.news.lk/" tabindex="-1">
+                                                                The Official Government News Portal of Sri Lanka
+                                                                </a></li> <li><a target="_blank" href="http://www.immigration.gov.lk" tabindex="-1">
+                                                                Department of Immigration and Emigration
+                                                                </a></li></ul> <h1>
+                                                    Related Links
+                                                </h1></div></div></div></div><div class="slick-slide slick-cloned" data-slick-index="-3" aria-hidden="true" tabindex="-1" style="width: 253px;"><div><div class="link-slide animate" style="width: 100%; display: inline-block;"><div class="link-slide-text"><ul><li><a target="_blank" href="https://www.srilanka.travel/index.php?route=attractions/attractions-search" tabindex="-1">
+                                                                    Tourist Attractions in Sri Lanka
+                                                                </a></li> <li><a target="_blank" href="https://www.srilanka.travel/accommodation" tabindex="-1">
+                                                                    SLTDA Approved Tourism Businesses
+                                                                </a></li> <li><a target="_blank" href="/storage/common_media/Sri Lanka At a Glance2984945360.pdf" tabindex="-1">
+                                                                    Sri Lanka At a Glance
+                                                                </a></li> <li><a target="_blank" href="https://www.srilanka.travel/travel-news" tabindex="-1">
+                                                                    Travel News
+                                                                </a></li> <li><a target="_blank" href="https://www.caa.lk/en/drones" tabindex="-1">
+                                                                    How to fly your drone legitimately
+                                                                </a></li> <li><a target="_blank" href="https://www.sltda.gov.lk/en/gem-jewellery-authority-registered-service-providers" tabindex="-1">
+                                                                    Gem &amp; Jewellery Authority Registered Service Providers
+                                                                </a></li></ul> <h1>
+                                                    Information
+                                                </h1></div></div></div></div><div class="slick-slide slick-cloned" data-slick-index="-2" aria-hidden="true" tabindex="-1" style="width: 253px;"><div><div class="link-slide animate" style="width: 100%; display: inline-block;"><div class="link-slide-text"><ul><li><a target="_blank" href="tourism-development-levy" tabindex="-1">
+                                                                Tourism Development Levy
+                                                                </a></li> <li><a target="_blank" href="home-stay" tabindex="-1">
+                                                                Home Stay
+                                                                </a></li> <li><a target="_blank" href="projects" tabindex="-1">
+                                                                Projects
+                                                                </a></li> <li><a target="_blank" href="sustainable-tourism" tabindex="-1">
+                                                                Sustainable Tourism
+                                                                </a></li> <li><a target="_blank" href="https://www.google.lk/maps/@7.8417541,80.7728782,7.75z" tabindex="-1">
+                                                                Sri Lanka Map
+                                                                </a></li> <li><a target="_blank" href="https://www.sltda.gov.lk/en/e-learning-portals" tabindex="-1">
+                                                                e-Learing Portals
+                                                                </a></li></ul> <h1>
+                                                    Resources
+                                                </h1></div></div></div></div><div class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" tabindex="-1" style="width: 253px;"><div><div class="link-slide animate" style="width: 100%; display: inline-block;"><div class="link-slide-text"><ul><li><a target="_blank" href="http://tourismmin.gov.lk/" tabindex="-1">
+                                                                    Ministry of Tourism and Land
+                                                                </a></li> <li><a target="_blank" href="http://www.srilanka.travel" tabindex="-1">
+                                                                    Sri Lanka Tourism Promotion Bureau
+                                                                </a></li> <li><a target="_blank" href="http://slithm.edu.lk" tabindex="-1">
+                                                                    Sri Lanka Institute of Tourism and Hotel Management
+                                                                </a></li> <li><a target="_blank" href="https://meetinsrilanka.com/" tabindex="-1">
+                                                                    Sri Lanka Convention Bureau
+                                                                </a></li></ul> <h1>
+                                                    Our Agencies
+                                                </h1></div></div></div></div><div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 253px;"><div><div class="link-slide animate" style="width: 100%; display: inline-block;"><div class="link-slide-text"><ul><li><a target="_blank" href="https://chamber.lk" tabindex="0">
+                                                                    Chamber of Commerce (Sri Lanka)
+                                                                </a></li> <li><a target="_blank" href="http://www.slaito.com/" tabindex="0">
+                                                                    Sri Lanka Association of Inbound Tour Operators
+                                                                </a></li> <li><a target="_blank" href="http://www.asmetsrilanka.com" tabindex="0">
+                                                                    Association of Small and Medium Enterprises in Tourism Sri Lanka
+                                                                </a></li> <li><a target="_blank" href="http://www.chambertourism.lk/" tabindex="0">
+                                                                    Chamber of Tourism &amp; Industry - Sri Lanka
+                                                                </a></li></ul> <h1>
+                                                    Industry Partners Association
+                                                </h1></div></div></div></div><div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 253px;"><div><div class="link-slide animate" style="width: 100%; display: inline-block;"><div class="link-slide-text"><ul><li><a target="_blank" href="https://www.gov.lk/" tabindex="0">
+                                                                Government of Sri Lanka Official Web Portal
+                                                                </a></li> <li><a target="_blank" href="https://www.news.lk/" tabindex="0">
+                                                                The Official Government News Portal of Sri Lanka
+                                                                </a></li> <li><a target="_blank" href="http://www.immigration.gov.lk" tabindex="0">
+                                                                Department of Immigration and Emigration
+                                                                </a></li></ul> <h1>
+                                                    Related Links
+                                                </h1></div></div></div></div><div class="slick-slide slick-active" data-slick-index="2" aria-hidden="false" style="width: 253px;"><div><div class="link-slide animate" style="width: 100%; display: inline-block;"><div class="link-slide-text"><ul><li><a target="_blank" href="https://www.srilanka.travel/index.php?route=attractions/attractions-search" tabindex="0">
+                                                                    Tourist Attractions in Sri Lanka
+                                                                </a></li> <li><a target="_blank" href="https://www.srilanka.travel/accommodation" tabindex="0">
+                                                                    SLTDA Approved Tourism Businesses
+                                                                </a></li> <li><a target="_blank" href="/storage/common_media/Sri Lanka At a Glance2984945360.pdf" tabindex="0">
+                                                                    Sri Lanka At a Glance
+                                                                </a></li> <li><a target="_blank" href="https://www.srilanka.travel/travel-news" tabindex="0">
+                                                                    Travel News
+                                                                </a></li> <li><a target="_blank" href="https://www.caa.lk/en/drones" tabindex="0">
+                                                                    How to fly your drone legitimately
+                                                                </a></li> <li><a target="_blank" href="https://www.sltda.gov.lk/en/gem-jewellery-authority-registered-service-providers" tabindex="0">
+                                                                    Gem &amp; Jewellery Authority Registered Service Providers
+                                                                </a></li></ul> <h1>
+                                                    Information
+                                                </h1></div></div></div></div><div class="slick-slide slick-active" data-slick-index="3" aria-hidden="false" style="width: 253px;"><div><div class="link-slide animate" style="width: 100%; display: inline-block;"><div class="link-slide-text"><ul><li><a target="_blank" href="tourism-development-levy" tabindex="0">
+                                                                Tourism Development Levy
+                                                                </a></li> <li><a target="_blank" href="home-stay" tabindex="0">
+                                                                Home Stay
+                                                                </a></li> <li><a target="_blank" href="projects" tabindex="0">
+                                                                Projects
+                                                                </a></li> <li><a target="_blank" href="sustainable-tourism" tabindex="0">
+                                                                Sustainable Tourism
+                                                                </a></li> <li><a target="_blank" href="https://www.google.lk/maps/@7.8417541,80.7728782,7.75z" tabindex="0">
+                                                                Sri Lanka Map
+                                                                </a></li> <li><a target="_blank" href="https://www.sltda.gov.lk/en/e-learning-portals" tabindex="0">
+                                                                e-Learing Portals
+                                                                </a></li></ul> <h1>
+                                                    Resources
+                                                </h1></div></div></div></div><div class="slick-slide" data-slick-index="4" aria-hidden="true" tabindex="-1" style="width: 253px;"><div><div class="link-slide animate" style="width: 100%; display: inline-block;"><div class="link-slide-text"><ul><li><a target="_blank" href="http://tourismmin.gov.lk/" tabindex="-1">
+                                                                    Ministry of Tourism and Land
+                                                                </a></li> <li><a target="_blank" href="http://www.srilanka.travel" tabindex="-1">
+                                                                    Sri Lanka Tourism Promotion Bureau
+                                                                </a></li> <li><a target="_blank" href="http://slithm.edu.lk" tabindex="-1">
+                                                                    Sri Lanka Institute of Tourism and Hotel Management
+                                                                </a></li> <li><a target="_blank" href="https://meetinsrilanka.com/" tabindex="-1">
+                                                                    Sri Lanka Convention Bureau
+                                                                </a></li></ul> <h1>
+                                                    Our Agencies
+                                                </h1></div></div></div></div><div class="slick-slide slick-cloned" data-slick-index="5" aria-hidden="true" tabindex="-1" style="width: 253px;"><div><div class="link-slide animate" style="width: 100%; display: inline-block;"><div class="link-slide-text"><ul><li><a target="_blank" href="https://chamber.lk" tabindex="-1">
+                                                                    Chamber of Commerce (Sri Lanka)
+                                                                </a></li> <li><a target="_blank" href="http://www.slaito.com/" tabindex="-1">
+                                                                    Sri Lanka Association of Inbound Tour Operators
+                                                                </a></li> <li><a target="_blank" href="http://www.asmetsrilanka.com" tabindex="-1">
+                                                                    Association of Small and Medium Enterprises in Tourism Sri Lanka
+                                                                </a></li> <li><a target="_blank" href="http://www.chambertourism.lk/" tabindex="-1">
+                                                                    Chamber of Tourism &amp; Industry - Sri Lanka
+                                                                </a></li></ul> <h1>
+                                                    Industry Partners Association
+                                                </h1></div></div></div></div><div class="slick-slide slick-cloned" data-slick-index="6" aria-hidden="true" tabindex="-1" style="width: 253px;"><div><div class="link-slide animate" style="width: 100%; display: inline-block;"><div class="link-slide-text"><ul><li><a target="_blank" href="https://www.gov.lk/" tabindex="-1">
+                                                                Government of Sri Lanka Official Web Portal
+                                                                </a></li> <li><a target="_blank" href="https://www.news.lk/" tabindex="-1">
+                                                                The Official Government News Portal of Sri Lanka
+                                                                </a></li> <li><a target="_blank" href="http://www.immigration.gov.lk" tabindex="-1">
+                                                                Department of Immigration and Emigration
+                                                                </a></li></ul> <h1>
+                                                    Related Links
+                                                </h1></div></div></div></div><div class="slick-slide slick-cloned" data-slick-index="7" aria-hidden="true" tabindex="-1" style="width: 253px;"><div><div class="link-slide animate" style="width: 100%; display: inline-block;"><div class="link-slide-text"><ul><li><a target="_blank" href="https://www.srilanka.travel/index.php?route=attractions/attractions-search" tabindex="-1">
+                                                                    Tourist Attractions in Sri Lanka
+                                                                </a></li> <li><a target="_blank" href="https://www.srilanka.travel/accommodation" tabindex="-1">
+                                                                    SLTDA Approved Tourism Businesses
+                                                                </a></li> <li><a target="_blank" href="/storage/common_media/Sri Lanka At a Glance2984945360.pdf" tabindex="-1">
+                                                                    Sri Lanka At a Glance
+                                                                </a></li> <li><a target="_blank" href="https://www.srilanka.travel/travel-news" tabindex="-1">
+                                                                    Travel News
+                                                                </a></li> <li><a target="_blank" href="https://www.caa.lk/en/drones" tabindex="-1">
+                                                                    How to fly your drone legitimately
+                                                                </a></li> <li><a target="_blank" href="https://www.sltda.gov.lk/en/gem-jewellery-authority-registered-service-providers" tabindex="-1">
+                                                                    Gem &amp; Jewellery Authority Registered Service Providers
+                                                                </a></li></ul> <h1>
+                                                    Information
+                                                </h1></div></div></div></div><div class="slick-slide slick-cloned" data-slick-index="8" aria-hidden="true" tabindex="-1" style="width: 253px;"><div><div class="link-slide animate" style="width: 100%; display: inline-block;"><div class="link-slide-text"><ul><li><a target="_blank" href="tourism-development-levy" tabindex="-1">
+                                                                Tourism Development Levy
+                                                                </a></li> <li><a target="_blank" href="home-stay" tabindex="-1">
+                                                                Home Stay
+                                                                </a></li> <li><a target="_blank" href="projects" tabindex="-1">
+                                                                Projects
+                                                                </a></li> <li><a target="_blank" href="sustainable-tourism" tabindex="-1">
+                                                                Sustainable Tourism
+                                                                </a></li> <li><a target="_blank" href="https://www.google.lk/maps/@7.8417541,80.7728782,7.75z" tabindex="-1">
+                                                                Sri Lanka Map
+                                                                </a></li> <li><a target="_blank" href="https://www.sltda.gov.lk/en/e-learning-portals" tabindex="-1">
+                                                                e-Learing Portals
+                                                                </a></li></ul> <h1>
+                                                    Resources
+                                                </h1></div></div></div></div><div class="slick-slide slick-cloned" data-slick-index="9" aria-hidden="true" tabindex="-1" style="width: 253px;"><div><div class="link-slide animate" style="width: 100%; display: inline-block;"><div class="link-slide-text"><ul><li><a target="_blank" href="http://tourismmin.gov.lk/" tabindex="-1">
+                                                                    Ministry of Tourism and Land
+                                                                </a></li> <li><a target="_blank" href="http://www.srilanka.travel" tabindex="-1">
+                                                                    Sri Lanka Tourism Promotion Bureau
+                                                                </a></li> <li><a target="_blank" href="http://slithm.edu.lk" tabindex="-1">
+                                                                    Sri Lanka Institute of Tourism and Hotel Management
+                                                                </a></li> <li><a target="_blank" href="https://meetinsrilanka.com/" tabindex="-1">
+                                                                    Sri Lanka Convention Bureau
+                                                                </a></li></ul> <h1>
+                                                    Our Agencies
+                                                </h1></div></div></div></div></div></div><button class="slick-next slick-arrow" aria-label="Next" type="button" style="">Next</button></section></div></div></div></div> <section class="section-5"><div class="row no-gutters bottom-bg"><div class="col-md-12 portals-bg-back fade-in animate"><div class="row no-gutters"><div class="col-xl-4 col-lg-5 col-md-12 portals-bg"><div class="container-fluid h-100"><div class="row no-gutters h-100 align-items-center"><div class="col-md-10"><h1 class="head-topic text-uppercase mb-0">Other Portals</h1> <h2 class="sub-topic mb-0">Visit Our Other Portals</h2></div></div></div></div> <div class="col-xl-8 col-lg-7 col-md-12"><div class="row no-gutters portal-mar"><div class="col-md-12 portal-item-back"><section class="other-portals-slider slider slick-initialized slick-slider"><div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 724px; transform: translate3d(0px, 0px, 0px);"><div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 181px;"><div><div class="portal-item" style="width: 100%; display: inline-block;"><a target="blank" href="https://www.srilanka.travel/" tabindex="0"><div class="portal-box"><div class="portal-img"><img data-src="https://www.sltda.gov.lk/storage/common_media/sri-lankan-travel3413220511.jpg" alt="portals slider image" class="lazyloaded" src="https://www.sltda.gov.lk/storage/common_media/sri-lankan-travel3413220511.jpg"></div> <div class="portals-text"><p>
+                                                                        Our Travel Site
+                                                                    </p></div></div></a></div></div></div><div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 181px;"><div><div class="portal-item" style="width: 100%; display: inline-block;"><a target="blank" href="http://www.tourismawards.lk/" tabindex="0"><div class="portal-box"><div class="portal-img"><img data-src="https://www.sltda.gov.lk/storage/common_media/tourism-awards520082202.jpg" alt="portals slider image" class="lazyloaded" src="https://www.sltda.gov.lk/storage/common_media/tourism-awards520082202.jpg"></div> <div class="portals-text"><p>
+                                                                        SL Tourism Awards
+                                                                    </p></div></div></a></div></div></div><div class="slick-slide slick-active" data-slick-index="2" aria-hidden="false" style="width: 181px;"><div><div class="portal-item" style="width: 100%; display: inline-block;"><a target="blank" href="http://nationalholidayresorts.lk/" tabindex="0"><div class="portal-box"><div class="portal-img"><img data-src="https://www.sltda.gov.lk/storage/common_media/05-National Holiday Resort2810490742.jpg" alt="portals slider image" class="lazyloaded" src="https://www.sltda.gov.lk/storage/common_media/05-National Holiday Resort2810490742.jpg"></div> <div class="portals-text"><p>
+                                                                        National Holiday Resorts
+                                                                    </p></div></div></a></div></div></div><div class="slick-slide slick-active" data-slick-index="3" aria-hidden="false" style="width: 181px;"><div><div class="portal-item" style="width: 100%; display: inline-block;"><a target="blank" href="http://slithm.edu.lk/" tabindex="0"><div class="portal-box"><div class="portal-img"><img data-src="https://www.sltda.gov.lk/storage/common_media/sl-institute-of-tourism4152086018.jpg" alt="portals slider image" class="lazyloaded" src="https://www.sltda.gov.lk/storage/common_media/sl-institute-of-tourism4152086018.jpg"></div> <div class="portals-text"><p>
+                                                                        SL Institute of Tourism
+                                                                    </p></div></div></a></div></div></div></div></div></section></div></div></div></div></div></div></section></div></div>
+
+    <script>
+      <!-- $(document).ready(function(){
+            if(localStorage.getItem('popState') != 'shown'){
+                $("#myModal").delay(2000).fadeIn();
+                localStorage.setItem('popState','shown')
+            }
+            $('#mainpopupnew').modal('show');
+        }); -->
+    </script>
+
+    <script>
+        const welcomeSection = new Vue({
+            el: '#welcome-sec',
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.parallax').scrolly({bgParallax: true});
+        });
+    </script>
+
+    <footer>
+
+    <div class="row top-bar no-gutters">
+        <!-- best web logo -->
+    <!-- <div class="floating-container">
+        <a class="floating-button" href="#">
+            <img src="https://www.sltda.gov.lk/images/bestwebaward.png" width="200px" class="" alt="">
+        </a>
+    </div> -->
+        <div class="col-sm-12">
+            <div class="container-fluid">
+                
+            </div>
+        </div>
+    </div>
+    <div class="row no-gutters footer-body justify-content-center">
+        <div class="container-fluid">
+            <div class="col-sm-12">
+                <div class="row justify-content-center">
+                    <div class="col-md-10 col-xl-9">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-6 foot-body-box">
+                                        <a target="_blank" class="foot-body-link" href="https://www.srilanka.travel/">Sri Lanka Travel</a>
+                                        <a target="_blank" class="foot-body-link" href="http://nationalholidayresorts.lk">National Holiday Resorts</a>
+                                        <a target="_blank" class="foot-body-link" href="https://slithm.edu.lk/">Sri Lanka Institute of Tourism &amp; Hotel Management</a>
+                                        <a target="_blank" class="foot-body-link" href="http://www.tourismawards.lk/">Tourism Awards</a>
+
+
+                                    </div>
+                                    <div class="col-6 foot-body-box">
+                                        <a target="_blank" class="foot-body-link" href="https://www.sltda.gov.lk/careers">Careers</a>
+
+
+                                        <a target="_blank" class="foot-body-link" href="https://www.sltda.gov.lk/tender">Tenders</a>
+                                        <a target="_blank" class="foot-body-link" href="https://www.sltda.gov.lk">Site Map</a>
+
+
+
+                                        <!-- <a target="_blank" class="foot-body-link" href="https://www.sltda.gov.lk/terms-of-use">Site Map</a> -->
+                                        <a target="_blank" class="foot-body-link" href="https://complaints.sltda.gov.lk/">Complaints</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 foot-body-box">
+                                <h3>Contact Us</h3>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h5>Address</h5>
+                                        <p>Sri Lanka Tourism Development Authority<br>
+                                        No. 80, Galle road,<br>
+                                        Colombo 03</p>
+                                        <br>
+                                        <h5>Telephone</h5>
+                                        <p><a href="tel:+94 112426800">+94 112 426800</a> 
+                                        </p>
+                                    </div>
+                                    <div class="col-6">
+                                        <h5>Fax</h5>
+                                        <p>+94 112 444165 / 2426984</p>
+                                        <br>
+                                        <h5>Email</h5>
+                                        <p>info@srilanka.travel</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 foot-body-bottom">
+                <div class="row">
+                    <div class="col-md-3 foot-body-bottom-box d-flex">
+                        <div class=""><img src="https://www.sltda.gov.lk/images/lonely-planet.png" width="100" alt=""> </div>
+                        <div class="">Best Travel<br>Destinations</div>
+                    </div>
+                    <div class="col-md-3 foot-body-bottom-box d-flex justify-content-center">
+                        <div class="col-md-12 footer-bottom">
+                            <div class="social-icon-wrap mb-2">
+                                <a class="social-icon-link" target="_blank" href="https://www.facebook.com/sltda.gov.lk">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                
+                                
+                                
+                                
+                                <a class="social-icon-link" target="_blank" href="https://twitter.com/sltda_srilanka">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a class="social-icon-link" target="_blank" href="https://www.instagram.com/sltda_srilanka/">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 foot-body-bottom-box d-flex justify-content-center">
+                        <div class="text-right">Tourism <br>Hotline </div>
+                        <div class=""><h2><a href="tel:1912">1912</a></h2></div>
+                    </div>
+
+
+                    <div class="col-md-3 foot-body-bottom-box d-flex justify-content-end">
+                        <div class="text-right">Ambulance Service<br><span>"Suwasariya"</span> for tourists</div>
+                        <div class=""><h2><a href="tel:1990">1990</a></h2></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row no-gutters foot-tag">
+        <div class="col-sm-12">
+            Copyright ©  2026  All Rights Reserved by Sri Lanka Tourism Development Authority. ( ICT Department ) 
+        </div>
+        <div class="col-sm-12">
+            
+            <p> <a href="https://www.sltda.gov.lk/en/privacy-policy" id="myLink" style="text-decoration: none; color: EED13E;">Privacy Policy </a> &nbsp;&nbsp; <a href="https://www.sltda.gov.lk/en/terms-conditions" id="myLink1" style="text-decoration: none; color: EED13E;">Terms &amp; Conditions </a></p> 
+            </div>
+    </div>
+
+ <!-- cookies ------------------------------------------------------------------------------------------------------>
+ <div id="lh-cookie-bar" style="display: block;">
+        <div id="contentcookie">
+            <p>We use cookies to offer you a better browsing experience, analyze site traffic, personalize content. Read about how we use cookies and how you can control them on our Privacy
+                Policy. If you continue to use this site, you consent to our use of cookies.<a href="https://www.sltda.gov.lk/en/privacy-policy"> Privacy Policy</a></p><button id="Cookie" tabindex="1" onclick="AcceptCookies();">Got it!
+            </button>
+            <div class="clear"></div>
+        </div>
+    </div>
+</footer>
+
+<script>
+//All the cookie setting stuff
+function SetCookie(cookieName, cookieValue, nDays) {
+    "use strict";
+    var today = new Date();
+    var expire = new Date();
+    if (nDays == null || nDays == 0) nDays = 1;
+    expire.setTime(today.getTime() + 3600000 * 24 * nDays);
+    document.cookie =
+        cookieName +
+        "=" +
+        escape(cookieValue) +
+        ";expires=" +
+        expire.toGMTString() +
+        "; path=/";
+}
+
+function ReadCookie(cookieName) {
+    "use strict";
+    var theCookie = " " + document.cookie;
+    var ind = theCookie.indexOf(" " + cookieName + "=");
+    if (ind == -1) ind = theCookie.indexOf(";" + cookieName + "=");
+    if (ind == -1 || cookieName == "") return "";
+    var ind1 = theCookie.indexOf(";", ind + 1);
+    if (ind1 == -1) ind1 = theCookie.length;
+    return unescape(theCookie.substring(ind + cookieName.length + 2, ind1));
+}
+
+function DeleteCookie(cookieName) {
+    "use strict";
+    var today = new Date();
+    var expire = new Date() - 30;
+    expire.setTime(today.getTime() - 3600000 * 24 * 90);
+    document.cookie =
+        cookieName + "=" + escape(cookieValue) + ";expires=" + expire.toGMTString();
+}
+
+function AcceptCookies() {
+    SetCookie("lhCookies", true, 30);
+    document.querySelector("#lh-cookie-bar").style.display = "none";
+}
+
+let cookie_bar = document.querySelector("#lh-cookie-bar");
+if (cookie_bar) {
+    if (!ReadCookie("lhCookies")) {
+        //If the cookie has not been set
+        cookie_bar.style.display = "block";
+    } else {
+        cookie_bar.style.display = "none";
+    }
+}
+</script>
+<style>
+#lh-cookie-bar {
+    font-family: "Montserrat", sas-serif;
+    background: #000;
+    display: block;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    left: 0px;
+    color: #fff;
+    width: 100%;
+}
+
+#lh-cookie-bar p {
+    text-align:center;
+    width: 85%;
+    float: left;
+    display: inline-block;
+    font-size: 14px !important;
+    line-height: 24px;
+    color: #adadad;
+    margin-bottom:-2rem;
+}
+
+#lh-cookie-bar button {
+    float: left;
+    background: transparent;
+    border: 1px solid #EBCE4E;
+    color: #EBCE4E;
+    padding: 15px 20px;
+    
+    font-size: 16px;
+    margin-top: 5px;
+    border-radius: 4px;
+}
+
+#lh-cookie-bar a {
+    color: #EBCE4E;
+    text-decoration: none;
+}
+
+#contentcookie {
+    padding: 10px 40px;
+    /* width: 80%;
+    margin: auto; */
+}
+
+.clear {
+    clear: both;
+}
+
+@media (max-width: 767px) {
+    #lh-cookie-bar p {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    #cookie-bar button {
+        width: 100%;
+    }
+
+    #lh-cookie-bar a {
+        color: #fff;
+    }
+
+    #contentcookie {
+        padding: 20px 0px;
+        width: 90%;
+        margin: auto;
+    }
+}
+</style>
+<!----------------------------------------------------------------------------->
+
+
+<link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
+<!--<script src="https://kit.fontawesome.com/ee5af581bf.js" crossorigin="anonymous"></script>-->
+
+<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+<link href="https://fonts.googleapis.com/css?family=Archivo+Narrow:400,500,600,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700&amp;display=swap" rel="stylesheet">
+<link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
+
+<!---------------------------------------------------------->
+<script>
+  document.getElementById('myLink').addEventListener('mouseover', function() {
+    this.style.color = '#ffff';
+  });
+
+  document.getElementById('myLink').addEventListener('mouseout', function() {
+    this.style.color = '#EED13E';
+  });
+</script>
+
+<script>
+  document.getElementById('myLink1').addEventListener('mouseover', function() {
+    this.style.color = '#ffff';
+  });
+
+  document.getElementById('myLink1').addEventListener('mouseout', function() {
+    this.style.color = '#EED13E';
+  });
+</script>
+    <!----------------------------------------------------------->
+<script>
+    $(document).ready(function () {
+
+        $.fn.addClassInScrollTop = function (data) {
+            try {
+                let currentEle = $(this);
+                currentEle.each(function (index) {
+                    let elementOT = currentEle.eq(index).offset().top;
+                    //console.log(currentEle.eq(index).length);
+
+                    let adjLevel = 0;
+                    if (data.adjestment) {
+                        adjLevel = data.adjestment;
+                    }
+                    addClassOnST();
+                    $(window).bind("scroll", addClassOnST);
+
+                    function addClassOnST() {
+                        let winST = $(window).scrollTop();
+                        if (winST + adjLevel > elementOT) {
+                            if (data.loopElement && !currentEle.eq(index).is(".animated")) {
+                                currentEle.eq(index).addClass(data.addClass);
+                                $(data.childElement).each(function (index) {
+                                    setTimeout(() => {
+                                        $(data.childElement).eq(index).addClass(data.childAddClass);
+                                    }, data.loopDelay * index);
+                                });
+                            } else {
+                                currentEle.eq(index).addClass(data.addClass);
+                            }
+                        } else {
+                            if (data.classRemove) {
+                                if (data.loopElement && currentEle.eq(index).is(".animated")) {
+                                    currentEle.eq(index).removeClass(data.addClass);
+                                    $(data.childElement).each(function (index) {
+                                        setTimeout(() => {
+                                            $(data.childElement).eq(index).removeClass(data.childAddClass);
+                                        }, data.loopDelay * index);
+                                    });
+                                } else {
+                                    currentEle.eq(index).removeClass(data.addClass);
+                                }
+                            }
+                        }
+                    }
+                });
+            } catch (err) {
+                //console.log(err.message);
+            }
+        };
+        $(".info-items-back").addClassInScrollTop({
+            addClass: "animated",
+            adjestment: ($(window).height()*3/4),
+            classRemove: false,
+            loopElement: true,
+            loopDelay: 300,
+            childElement: ".info-items",
+            childAddClass: "animate"
+        });
+
+        $(".link-slider").addClassInScrollTop({
+            addClass: "animated",
+            adjestment: ($(window).height()*3/4),
+            classRemove: false,
+            loopElement: true,
+            loopDelay: 300,
+            childElement: ".link-slide",
+            childAddClass: "animate"
+        });
+
+        $(".welcome-mar").addClassInScrollTop({
+            addClass: "animated",
+            adjestment: ($(window).height()*3/4),
+            classRemove: false,
+            loopElement: true,
+            loopDelay: 300,
+            childElement: ".welcome-img-back",
+            childAddClass: "animate"
+        });
+
+        $(".latest-slider-pad-back").addClassInScrollTop({
+            addClass: "animated",
+            adjestment: ($(window).height()*3/4),
+            classRemove: false,
+            loopElement: true,
+            loopDelay: 300,
+            childElement: ".latest-slider-pad",
+            childAddClass: "animate"
+        });
+
+        $(".register-item-back").addClassInScrollTop({
+            addClass: "animated",
+            adjestment: ($(window).height()*3/4),
+            classRemove: false,
+            loopElement: true,
+            loopDelay: 200,
+            childElement: ".card",
+            childAddClass: "animate"
+        });
+
+        $(".statistics-pad").addClassInScrollTop({
+            addClass: "animated",
+            adjestment: ($(window).height()*3/4),
+            classRemove: false,
+            loopElement: true,
+            loopDelay: 200,
+            childElement: ".statistics-box",
+            childAddClass: "animate"
+        });
+
+        $(".download-box-item").addClassInScrollTop({
+            addClass: "animated",
+            adjestment: ($(window).height()*3/4),
+            classRemove: false,
+            loopElement: true,
+            loopDelay: 200,
+            childElement: ".boutique-item-back",
+            childAddClass: "animate"
+        });
+
+        /*$(".other-portals-slider").addClassInScrollTop({
+            addClass: "animated",
+            adjestment: ($(window).height()*1),
+            classRemove: false,
+            loopElement: true,
+            loopDelay: 300,
+            childElement: ".portal-item",
+            childAddClass: "animate"
+        });*/
+
+        $(".animate-in-right").addClassInScrollTop({
+            addClass: "animate",
+            adjestment: ($(window).height()*3/4),
+            classRemove: false
+        });
+
+        $(".animate-in-left").addClassInScrollTop({
+            addClass: "animate",
+            adjestment: ($(window).height()*3/4),
+            classRemove: false
+        });
+
+        $(".fade-in").addClassInScrollTop({
+            addClass: "animate",
+            adjestment: ($(window).height()*3/4),
+            classRemove: false
+        });
+    });
+    function onPageLoaded(){
+
+        //nav items animation
+        $(".nav-item").each(function (index) {
+
+            setTimeout(()=>{
+                $(this).children("a").addClass("animate");
+            }, 50*index);
+        });
+
+        setTimeout(function () {
+            $(".carousel-caption>h1").addClass("animate")
+        },100);
+
+        setTimeout(function () {
+            $(".carousel-caption>h5").addClass("animate")
+        },1000);
+
+        //load animations
+        setTimeout(function () {
+            $(".welcome-animation").addClass("animate")
+        },0);
+
+        setTimeout(function () {
+            $(".load-text-animation").addClass("animate")
+        },100);
+
+        $(".load-section-animation").each(function (index) {
+
+            setTimeout(()=>{
+                $(this).children(".load-section").addClass("animate");
+            }, 100*index);
+        });
+        //load animations
+
+        //register with us
+        setTimeout(function () {
+            $(".register-card").addClass("animate")
+        },500);
+
+        //addresses telephone
+        $(".tel-box").each(function (index) {
+
+            setTimeout(()=>{
+                $(this).children(".tel-box-inner").addClass("animate");
+            }, 100*index);
+        });
+    }
+    window.addEventListener('load', function () {
+        onPageLoaded();
+    });
+</script>
+
+
+</body></html>
