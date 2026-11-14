@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grade 8 ICT - Differences & Comparisons Challenge</title>
+  <title>Grade 8 ICT - Complete Theory Challenge</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
     body { background-color: #0f172a; color: #ffffff; min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; padding: 20px; position: relative; }
@@ -30,11 +30,11 @@
     .round-badge { align-self: center; background: #8b5cf6; color: #fff; padding: 6px 22px; border-radius: 20px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3); }
     
     .question-box { background: #1e293b; padding: 35px 30px; border-radius: 20px; text-align: center; box-shadow: 0 15px 30px rgba(0,0,0,0.4); margin-bottom: 25px; border: 2px solid #334155; min-height: 140px; display: flex; align-items: center; justify-content: center; }
-    .question-text { font-size: 2.0rem; font-weight: 700; line-height: 1.35; color: #f8fafc; }
+    .question-text { font-size: 1.8rem; font-weight: 700; line-height: 1.35; color: #f8fafc; }
 
     /* Options Grid (Kahoot Theme) */
     .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 25px; }
-    .option-card { padding: 22px 20px; border-radius: 16px; display: flex; align-items: center; font-size: 1.45rem; font-weight: 600; cursor: pointer; transition: transform 0.15s ease, opacity 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.25); }
+    .option-card { padding: 22px 20px; border-radius: 16px; display: flex; align-items: center; font-size: 1.3rem; font-weight: 600; cursor: pointer; transition: transform 0.15s ease, opacity 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.25); }
     .option-card:hover { transform: translateY(-3px); }
     
     .shape { font-size: 2rem; margin-right: 18px; opacity: 0.95; }
@@ -88,8 +88,8 @@
 
   <!-- Header with Scoreboard & Team Rename -->
   <header>
-    <div class="game-title">🎮 Grade 8 ICT Differences Challenge</div>
-    <div class="q-counter" id="q-counter">Question 1 / 40</div>
+    <div class="game-title">🎮 Grade 8 ICT Challenge</div>
+    <div class="q-counter" id="q-counter">Question 1 / 60</div>
     <div class="scoreboard">
       <div class="team-card">
         <div class="team-header">
@@ -143,7 +143,7 @@
 
   <!-- Main Question Box -->
   <main>
-    <div class="round-badge" id="round-badge">Unit 1: Number Systems Differences</div>
+    <div class="round-badge" id="round-badge">Unit 1: Number Systems</div>
     <div class="question-box">
       <div class="question-text" id="question-text">Loading Question...</div>
     </div>
@@ -186,61 +186,79 @@
   </div>
 
   <script>
-    // 40 DIFFERENCE & COMPARISON QUESTIONS COVERING ALL THEORY POINTS
+    // 60 QUESTIONS COVERING ALL 6 UNITS (10 QUESTIONS PER UNIT)
     const questions = [
-      // --- UNIT 1: NUMBER SYSTEMS DIFFERENCES ---
-      { round: "Unit 1: Number System Differences", q: "What is the main difference between the Decimal system and the Binary system?", opts: ["Decimal uses 10 digits (0-9), while Binary uses only 2 digits (0 and 1)", "Decimal uses letters A-F, while Binary uses digits 0-9", "Binary is for humans, while Decimal is for computer memory", "Decimal has a base of 2, while Binary has a base of 10"], ans: 0 },
-      { round: "Unit 1: Number System Differences", q: "What is the difference between a Bit and a Byte?", opts: ["A Bit is 8 Bytes, while a Byte is 1 Bit", "A Bit is a single binary digit (0 or 1), while a Byte is a group of 8 Bits", "A Bit stores text, while a Byte stores numbers", "A Bit is Base 10, while a Byte is Base 16"], ans: 1 },
-      { round: "Unit 1: Number System Differences", q: "What is the difference in Base Value between Octal and Hexadecimal systems?", opts: ["Octal is Base 16, while Hexadecimal is Base 8", "Octal uses letters A-F, while Hexadecimal uses 0-7", "Octal is Base 8 (0-7), while Hexadecimal is Base 16 (0-9 and A-F)", "Octal is Base 2, while Hexadecimal is Base 10"], ans: 2 },
-      { round: "Unit 1: Number System Differences", q: "How does positional value differ between Decimal and Binary numbers?", opts: ["Decimal uses powers of 10 (10⁰, 10¹, 10²), while Binary uses powers of 2 (2⁰, 2¹, 2²)", "Decimal uses powers of 2, while Binary uses powers of 8", "Binary positional values decrease from right to left", "Decimal positional values are all equal to 10"], ans: 0 },
-      { round: "Unit 1: Binary Conversions", q: "What is the difference when converting Decimal 13 and Decimal 10 to Binary?", opts: ["Decimal 13 = 1010₂, while Decimal 10 = 1101₂", "Decimal 13 = 1111₂, while Decimal 10 = 1000₂", "Decimal 13 = 1100₂, while Decimal 10 = 0011₂", "Decimal 13 = 1101₂, while Decimal 10 = 1010₂"], ans: 3 },
+      // --- UNIT 1: NUMBER SYSTEMS ---
+      { round: "Unit 1: Number Systems", q: "What is the base of the binary number system?", opts: ["Base 2", "Base 10", "Base 8", "Base 16"], ans: 0 },
+      { round: "Unit 1: Number Systems", q: "Which symbols are used in the decimal number system?", opts: ["0 and 1", "0 to 7", "0 to 9", "A to F"], ans: 2 },
+      { round: "Unit 1: Number Systems", q: "What is a group of 8 bits called?", opts: ["A Nibble", "A Byte", "A Word", "A Kilobyte"], ans: 1 },
+      { round: "Unit 1: Number Systems", q: "What is the base of the octal number system?", opts: ["Base 2", "Base 8", "Base 10", "Base 16"], ans: 1 },
+      { round: "Unit 1: Number Systems", q: "What is the base of the hexadecimal number system?", opts: ["Base 8", "Base 10", "Base 2", "Base 16"], ans: 3 },
+      { round: "Unit 1: Number Systems", q: "What is the binary equivalent of decimal number 2?", opts: ["10₂", "11₂", "01₂", "100₂"], ans: 0 },
+      { round: "Unit 1: Number Systems", q: "What is the decimal value of binary number 101₂?", opts: ["3", "4", "5", "6"], ans: 2 },
+      { round: "Unit 1: Number Systems", q: "Why do computers convert all input data into binary numbers?", opts: ["Because computers only understand 0 and 1 states", "Because binary numbers are colorful", "Because humans prefer binary numbers", "Because binary takes less screen space"], ans: 0 },
+      { round: "Unit 1: Number Systems", q: "What do the digits 0 and 1 represent inside computer hardware?", opts: ["Red and Green light", "OFF and ON states", "Text and Sound", "Input and Output"], ans: 1 },
+      { round: "Unit 1: Number Systems", q: "What is the place value of the rightmost bit (2⁰) in a binary number?", opts: ["2", "8", "0", "1"], ans: 3 },
 
-      // --- UNIT 2: OPERATING SYSTEMS & HARDWARE DIFFERENCES ---
-      { round: "Unit 2: File Attribute Differences", q: "What is the difference between Read-only and Hidden file attributes?", opts: ["Read-only prevents editing/saving changes, while Hidden conceals the file from normal view", "Read-only deletes the file, while Hidden locks the CPU", "Read-only makes the file invisible, while Hidden allows editing", "There is no difference between them"], ans: 0 },
-      { round: "Unit 2: Hardware Port Differences", q: "What is the key difference between a VGA port and an HDMI port?", opts: ["VGA carries audio only, while HDMI carries video only", "VGA carries analog video only (15-pin blue), while HDMI carries BOTH digital video AND audio", "VGA connects to the Internet, while HDMI connects a keyboard", "VGA is wireless, while HDMI requires 5 cables"], ans: 1 },
-      { round: "Unit 2: Hardware Port Differences", q: "What is the difference between a PS/2 Keyboard port and a PS/2 Mouse port?", opts: ["Keyboard PS/2 is Purple, while Mouse PS/2 is Green", "Keyboard PS/2 is Green, while Mouse PS/2 is Purple", "Keyboard PS/2 uses 15 pins, while Mouse PS/2 uses HDMI", "They are identical in color and interchangeable"], ans: 0 },
-      { round: "Unit 2: Troubleshooting Differences", q: "What is the difference between Hardware Troubleshooting and Software Troubleshooting?", opts: ["Hardware troubleshooting cleans files, while Software troubleshooting fixes wires", "Hardware troubleshooting is done online, while Software troubleshooting opens the CPU", "Hardware troubleshooting fixes physical components, while Software troubleshooting fixes program errors", "Hardware troubleshooting affects only Microsoft Word"], ans: 2 },
-      { round: "Unit 2: Hardware Port Differences", q: "How does an RJ45 port differ from an eSATA port?", opts: ["RJ45 connects speakers, while eSATA connects a microphone", "RJ45 connects Ethernet network cables, while eSATA connects external storage drives", "RJ45 is for video display, while eSATA is for wireless internet", "RJ45 uses 15 pins, while eSATA is a blue round connector"], ans: 1 },
+      // --- UNIT 2: CONFIGURING AND FORMATTING A COMPUTER ---
+      { round: "Unit 2: Computer Configuration", q: "Why is it important to set the correct time zone on a computer?", opts: ["For legal, commercial, and scheduled software updates", "To change desktop background color", "To increase internet speed", "To make the mouse move faster"], ans: 0 },
+      { round: "Unit 2: Computer Configuration", q: "Which file attribute makes a file invisible during normal viewing?", opts: ["Read-only", "Hidden", "Archived", "Executable"], ans: 1 },
+      { round: "Unit 2: Computer Configuration", q: "Which file attribute prevents users from modifying or saving changes to a file?", opts: ["Hidden", "Read-only", "System", "Temporary"], ans: 1 },
+      { round: "Unit 2: Computer Configuration", q: "Which port transmits both digital video and audio signals?", opts: ["VGA port", "PS/2 port", "HDMI port", "Serial port"], ans: 2 },
+      { round: "Unit 2: Computer Configuration", q: "What color is typically used for a PS/2 keyboard port?", opts: ["Purple", "Green", "Blue", "Yellow"], ans: 0 },
+      { round: "Unit 2: Computer Configuration", q: "What port is used to connect network cables in computer labs?", opts: ["RJ45 Ethernet port", "HDMI port", "VGA port", "Audio port"], ans: 0 },
+      { round: "Unit 2: Computer Configuration", q: "Which utility tool is used by the operating system to remove unnecessary files from the hard disk?", opts: ["Disk Cleanup", "Notepad", "Paint", "Calculator"], ans: 0 },
+      { round: "Unit 2: Computer Configuration", q: "What is a computer virus?", opts: ["A hardware cooling fan", "Malicious software that harms systems and replicates itself", "An internet browser", "A sound driver"], ans: 1 },
+      { round: "Unit 2: Computer Configuration", q: "Which blue colored port with 15 pins is used for older monitors?", opts: ["VGA port", "USB port", "HDMI port", "eSATA port"], ans: 0 },
+      { round: "Unit 2: Computer Configuration", q: "Which Windows 10 display mode hides desktop icons and uses full-screen tiles?", opts: ["PC mode", "Safe mode", "Tablet mode", "Dark mode"], ans: 2 },
 
-      // --- UNIT 3: WORD PROCESSING TOOL DIFFERENCES ---
-      { round: "Unit 3: Word Formatting Differences", q: "What is the difference between Subscript and Superscript in text formatting?", opts: ["Subscript lowers text below the baseline (H₂O), while Superscript raises text above (x²)", "Subscript raises text above, while Superscript lowers text below", "Subscript makes text bold, while Superscript makes text italic", "Subscript changes font size, while Superscript changes font color"], ans: 0 },
-      { round: "Unit 3: Word Command Differences", q: "What is the difference between 'Save' and 'Save As'?", opts: ["Save deletes the file, while Save As opens a new file", "Save updates changes in the current file, while Save As allows saving a copy with a new name/location", "Save prints the document, while Save As closes Word", "Save works only on pictures, while Save As works on text"], ans: 1 },
-      { round: "Unit 3: Word Command Differences", q: "What is the difference between Cut & Paste (Ctrl+X) and Copy & Paste (Ctrl+C)?", opts: ["Cut removes original text to move it, while Copy leaves original text and creates a duplicate", "Cut creates a duplicate, while Copy deletes the text", "Cut changes font color, while Copy highlights text", "Cut works only on tables, while Copy works only on shapes"], ans: 0 },
-      { round: "Unit 3: Word Command Differences", q: "What is the difference between Undo (Ctrl+Z) and Redo (Ctrl+Y)?", opts: ["Undo repeats the last action, while Redo deletes the document", "Undo cancels the last action, while Redo re-applies the action that was canceled", "Undo saves the file, while Redo opens a new document", "Undo aligns text left, while Redo aligns text right"], ans: 1 },
-      { round: "Unit 3: Word Alignment Differences", q: "What is the difference between Center Alignment and Justify Alignment?", opts: ["Center aligns text to left margin, while Justify aligns text to top", "Center makes text bold, while Justify underlines text", "Center places text in the middle, while Justify aligns text evenly along both left and right margins", "Center is for paragraphs, while Justify is for single words"], ans: 2 },
+      // --- UNIT 3: WORD PROCESSING ---
+      { round: "Unit 3: Word Processing", q: "What tool in word processing software checks spelling and grammar mistakes?", opts: ["Word Art", "Spell check", "Format Painter", "Clip Art"], ans: 1 },
+      { round: "Unit 3: Word Processing", q: "Which formatting style places text slightly below the normal text line (like H₂O)?", opts: ["Superscript", "Subscript", "Bold", "Italic"], ans: 1 },
+      { round: "Unit 3: Word Processing", q: "Which formatting style places text slightly above the normal text line (like x²)?", opts: ["Subscript", "Superscript", "Underline", "Shading"], ans: 1 },
+      { round: "Unit 3: Word Processing", q: "What command saves changes made to the current document?", opts: ["Open", "Save", "Print", "Close"], ans: 1 },
+      { round: "Unit 3: Word Processing", q: "What is the difference between 'Save' and 'Save As'?", opts: ["Save deletes the file, Save As prints it", "Save updates current file, Save As saves a copy with a new name", "Save is for images only, Save As is for text", "There is no difference"], ans: 1 },
+      { round: "Unit 3: Word Processing", q: "Which alignment tool aligns text evenly along both left and right margins?", opts: ["Left align", "Center", "Right align", "Justify"], ans: 3 },
+      { round: "Unit 3: Word Processing", q: "What tool is used to insert decorative and artistic text in a document?", opts: ["Word Art", "Clip Art", "Table", "Shape"], ans: 0 },
+      { round: "Unit 3: Word Processing", q: "Which button cancels your last action in word processing software?", opts: ["Redo", "Undo", "Cut", "Copy"], ans: 1 },
+      { round: "Unit 3: Word Processing", q: "What tool colors the background behind text or paragraphs?", opts: ["Font color", "Shading", "Highlight", "Underline"], ans: 1 },
+      { round: "Unit 3: Word Processing", q: "Which feature adds small dots or symbols before items in a list?", opts: ["Numbering", "Bullets", "Tables", "Borders"], ans: 1 },
 
-      // --- UNIT 4: FLOWCHART & ALGORITHM DIFFERENCES ---
-      { round: "Unit 4: Flowchart Shape Differences", q: "In Flowcharts, what is the difference between a Rectangle shape and a Diamond shape?", opts: ["Rectangle represents a Process/Action, while Diamond represents a Decision/Condition", "Rectangle represents Start/End, while Diamond represents Input/Output", "Rectangle represents a question, while Diamond represents calculation", "Rectangle is for output, while Diamond is for termination"], ans: 0 },
-      { round: "Unit 4: Flowchart Shape Differences", q: "In Flowcharts, what is the difference between an Oval shape and a Parallelogram shape?", opts: ["Oval represents Start/End (Terminator), while Parallelogram represents Input/Output", "Oval represents a Decision, while Parallelogram represents a Process", "Oval represents calculations, while Parallelogram represents ending program", "There is no difference in usage"], ans: 0 },
-      { round: "Unit 4: Control Structure Differences", q: "What is the difference between Sequence and Selection control structures?", opts: ["Sequence repeats code forever, while Selection stops the program", "Sequence executes steps one after another in order, while Selection chooses paths based on a condition", "Sequence is for decisions, while Selection is for step 1 only", "Sequence uses diamonds, while Selection uses only ovals"], ans: 1 },
-      { round: "Unit 4: Scratch Code Differences", q: "In Scratch, what is the difference between 'if...then' and 'if...then...else'?", opts: ["'if...then' runs code only if True, while 'if...then...else' runs path 1 if True and path 2 if False", "'if...then' repeats 10 times, while 'if...then...else' runs once", "'if...then' is for numbers, while 'if...then...else' is for text only", "'if...then' asks a question, while 'if...then...else' deletes sprite"], ans: 0 },
-      { round: "Unit 4: Operator Differences", q: "In Scratch, what is the difference between the 'and' operator and the 'or' operator?", opts: ["'and' reverses the answer, while 'or' adds two numbers", "'and' works on text, while 'or' works on sprite colors", "'and' requires BOTH conditions to be True, while 'or' requires AT LEAST ONE condition to be True", "'and' is for selection, while 'or' is for sequence"], ans: 2 },
+      // --- UNIT 4: PROGRAMMING ---
+      { round: "Unit 4: Programming", q: "What are the three main parts when analyzing a problem for programming?", opts: ["Start, Process, End", "Input, Process, Output", "Keyboard, CPU, Monitor", "Files, Folders, Drives"], ans: 1 },
+      { round: "Unit 4: Programming", q: "What control structure executes steps one after another in order?", opts: ["Selection", "Repetition", "Sequence", "Loop"], ans: 2 },
+      { round: "Unit 4: Programming", q: "What control structure makes decisions based on whether a condition is true or false?", opts: ["Sequence", "Selection", "Addition", "Division"], ans: 1 },
+      { round: "Unit 4: Programming", q: "What flowchart shape is used for decisions and conditions (like Yes/No questions)?", opts: ["Rectangle", "Oval", "Parallelogram", "Diamond"], ans: 3 },
+      { round: "Unit 4: Programming", q: "What does the MOD operator calculate in programming?", opts: ["The sum of two numbers", "The remainder of a division", "The product of numbers", "The average value"], ans: 1 },
+      { round: "Unit 4: Programming", q: "Which Scratch selection block runs code only when a condition is true?", opts: ["if...then", "repeat...until", "stop all", "forever"], ans: 0 },
+      { round: "Unit 4: Programming", q: "Which Scratch logical block returns true only if both conditions are true?", opts: ["or", "not", "and", "if"], ans: 2 },
+      { round: "Unit 4: Programming", q: "Which Scratch logical block reverses a condition (true becomes false)?", opts: ["and", "not", "or", "mod"], ans: 1 },
+      { round: "Unit 4: Programming", q: "Which smart device is a remotely controlled mini helicopter used to take aerial photos?", opts: ["Smart watch", "Smart TV", "Drone camera", "Smart phone"], ans: 2 },
+      { round: "Unit 4: Programming", q: "What type of application uses GPS to direct users and find routes?", opts: ["Route map", "Sky map", "Chess game", "Voice recorder"], ans: 0 },
 
-      // --- UNIT 5: LOGIC GATE DIFFERENCES ---
-      { round: "Unit 5: Logic Gate Differences", q: "What is the difference between an AND Gate and an OR Gate?", opts: ["AND Gate output is 1 only when BOTH inputs are 1, while OR Gate output is 1 when AT LEAST ONE input is 1", "AND Gate output is always 0, while OR Gate output is always 1", "AND Gate takes 1 input, while OR Gate takes 10 inputs", "AND Gate inverts signals, while OR Gate adds decimals"], ans: 0 },
-      { round: "Unit 5: Logic Gate Differences", q: "What is the main difference between a NOT Gate and both AND/OR Gates?", opts: ["NOT Gate outputs 1 when inputs are equal, while AND Gate inverts signals", "NOT Gate has only 1 input and inverts it, while AND/OR Gates usually have 2 or more inputs", "NOT Gate uses base 10, while AND/OR Gates use base 16", "NOT Gate requires water valves, while AND/OR Gates use light sensors"], ans: 1 },
-      { round: "Unit 5: Logic Gate Differences", q: "How do the Boolean mathematical expressions for AND and OR gates differ?", opts: ["AND Gate output is A · B, while OR Gate output is A + B", "AND Gate output is A + B, while OR Gate output is A · B", "AND Gate output is Ā, while OR Gate output is A / B", "AND Gate output is A = B, while OR Gate output is A - B"], ans: 0 },
-      { round: "Unit 5: Voltage Differences", q: "In digital circuits, what is the difference between High Voltage (1) and Low Voltage (0)?", opts: ["High Voltage represents binary 1 (5V / TRUE / ON), while Low Voltage represents binary 0 (0V / FALSE / OFF)", "High Voltage represents binary 0, while Low Voltage represents binary 1", "High Voltage is for software, while Low Voltage is for monitors", "High Voltage is 100V, while Low Voltage is 50V"], ans: 0 },
-      { round: "Unit 5: Circuit Differences", q: "What is the difference between a single NOT Gate and a double NOT Gate connected in series?", opts: ["A single NOT Gate output is always 1, while double NOT is always 0", "A single NOT Gate inverts input (1 → 0), while a double NOT Gate restores original input (1 → 0 → 1)", "A double NOT Gate turns into an OR Gate", "There is no difference; both give the inverted result"], ans: 1 },
+      // --- UNIT 5: PHYSICAL COMPUTING ---
+      { round: "Unit 5: Physical Computing", q: "What are the three basic logic gates used in digital circuits?", opts: ["AND, OR, NOT", "ADD, SUB, MUL", "IN, OUT, MID", "HIGH, LOW, TRUE"], ans: 0 },
+      { round: "Unit 5: Physical Computing", q: "In an AND gate, what must the inputs be to get an output of 1?", opts: ["At least one input must be 1", "Both inputs must be 1", "Both inputs must be 0", "Inputs do not matter"], ans: 1 },
+      { round: "Unit 5: Physical Computing", q: "In an OR gate, what is the output if at least one input is 1?", opts: ["0", "1", "Depends on clock", "None"], ans: 1 },
+      { round: "Unit 5: Physical Computing", q: "What is the output of a NOT gate if its input is 0?", opts: ["0", "1", "Both 0 and 1", "Null"], ans: 1 },
+      { round: "Unit 5: Physical Computing", q: "What is the boolean mathematical expression for an AND gate with inputs A and B?", opts: ["A + B", "A · B", "Ā", "A = B"], ans: 1 },
+      { round: "Unit 5: Physical Computing", q: "What is the boolean mathematical expression for an OR gate with inputs A and B?", opts: ["A · B", "A + B", "Ā", "A - B"], ans: 1 },
+      { round: "Unit 5: Physical Computing", q: "What symbol is used to represent the inverted output of a NOT gate with input A?", opts: ["A'", "Ā", "A*", "A/"], ans: 1 },
+      { round: "Unit 5: Physical Computing", q: "What voltage level typically represents binary state '1' in digital hardware?", opts: ["0V (Low)", "5V (High)", "100V", "12V"], ans: 1 },
+      { round: "Unit 5: Physical Computing", q: "What voltage level represents binary state '0' in digital hardware?", opts: ["5V", "0V (Low)", "220V", "50V"], ans: 1 },
+      { round: "Unit 5: Physical Computing", q: "Which logic gate acts like an inverter, changing 1 to 0 and 0 to 1?", opts: ["AND gate", "OR gate", "NOT gate", "Buffer"], ans: 2 },
 
-      // --- UNIT 6: INTERNET & HTML DIFFERENCES ---
-      { round: "Unit 6: Web Tool Differences", q: "What is the difference between a Web Browser and a Search Engine?", opts: ["A Web Browser is software to view web pages (Chrome), while a Search Engine is a website to find information (Google)", "A Web Browser searches the web, while A Search Engine creates HTML code", "A Web Browser is hardware, while a Search Engine is an operating system", "There is no difference; they are exact synonyms"], ans: 0 },
-      { round: "Unit 6: HTML Tag Differences", q: "In HTML code, what is the difference between <head> and <body> tags?", opts: ["<head> contains pictures, while <body> contains only background color", "<head> contains metadata and title info, while <body> contains all visible content shown on screen", "<head> is at the end of file, while <body> is at beginning", "<head> is for links, while <body> is hidden from viewers"], ans: 1 },
-      { round: "Unit 6: HTML Formatting Differences", q: "In HTML text formatting, what is the difference between <b> and <i> tags?", opts: ["<b> makes text BOLD, while <i> makes text ITALIC (slanted)", "<b> makes text italic, while <i> makes text bold", "<b> centers text, while <i> underlines text", "<b> changes font size, while <i> creates a hyperlink"], ans: 0 },
-      { round: "Unit 6: Web Feature Differences", q: "In web browsing, what is the difference between Bookmarks and History?", opts: ["Bookmarks log deleted files, while History saves new tabs", "Bookmarks require password login, while History opens Notepad", "Bookmarks save chosen favorite web links for easy access, while History logs all previously visited web pages", "Bookmarks close browser windows, while History downloads files"], ans: 2 },
-      { round: "Unit 6: Shortcut Differences", q: "What is the difference between keyboard shortcuts Ctrl + T and Ctrl + N in a browser?", opts: ["Ctrl + T opens a NEW TAB in the same window, while Ctrl + N opens a NEW WINDOW", "Ctrl + T opens history, while Ctrl + N opens bookmarks", "Ctrl + T closes browser, while Ctrl + N prints page", "Ctrl + T opens search engine, while Ctrl + N opens downloads"], ans: 0 },
-
-      // --- CROSS-UNIT MASTERY & COMPARISONS ---
-      { round: "Cross-Unit Mastery", q: "How does Binary Representation of Text differ from Sound in computer memory?", opts: ["Text uses binary character codes (like ASCII), while Sound uses sampled binary audio wave patterns", "Text uses base 10, while Sound uses base 16", "Text is stored in RAM, while Sound can never be converted to binary", "Sound uses decimal numbers, while Text uses only 0s"], ans: 0 },
-      { round: "Cross-Unit Mastery", q: "What is the difference between Input devices and Output devices in the IPO model?", opts: ["Input devices show information, while Output devices store files", "Input devices feed data into computer (Keyboard/Mouse), while Output devices display results (Monitor/Printer)", "Input devices are software, while Output devices are CPU registers", "Input devices run Scratch, while Output devices convert HTML"], ans: 1 },
-      { round: "Cross-Unit Mastery", q: "What is the difference between System Software (OS) and Application Software?", opts: ["OS manages hardware and system resources, while Application software helps users perform specific tasks", "OS is used for typing letters, while Application software boots computer", "OS requires HTML, while Application software requires binary cables", "OS works only on phones, while Application software works on projectors"], ans: 0 },
-      { round: "Cross-Unit Mastery", q: "What is the difference between Static HTML text and a Hyperlink on a web page?", opts: ["Static text opens new window, while Hyperlink changes font color only", "Static text is plain readable content, while a Hyperlink connects to another web page when clicked", "Static text requires internet, while Hyperlinks work offline only", "Static text is written in Notepad, while Hyperlinks are made in MS Paint"], ans: 1 },
-      { round: "Cross-Unit Mastery", q: "How does a Logical AND Block in Scratch differ from a Logical NOT Block?", opts: ["Logical AND evaluates if two conditions are both true, while Logical NOT reverses a single condition", "Logical AND adds numbers, while Logical NOT multiplies numbers", "Logical AND changes costume, while Logical NOT plays sound", "Logical AND is blue, while Logical NOT is purple"], ans: 0 },
-      { round: "Cross-Unit Mastery", q: "What is the difference between a Parallel Port and a USB Port on computers?", opts: ["Parallel port connects network cables, while USB connects monitors only", "Parallel port carries audio, while USB carries high voltage power only", "Parallel port was widely used for older printers (pink connector), while USB is a universal modern port for almost all devices", "Parallel port is wireless, while USB requires 15 pins"], ans: 2 },
-      { round: "Cross-Unit Mastery", q: "How does Line Spacing differ from Paragraph Spacing in Word Processing?", opts: ["Line spacing changes distance between lines within a paragraph, while Paragraph spacing changes space before/after whole paragraphs", "Line spacing changes font size, while Paragraph spacing changes text color", "Line spacing inserts tables, while Paragraph spacing inserts pictures", "Line spacing aligns text left, while Paragraph spacing aligns text right"], ans: 0 },
-      { round: "Cross-Unit Mastery", q: "What is the difference between a Variable and a Constant value in programming?", opts: ["A Variable can change its stored value during execution, while a Constant value remains fixed", "A Variable is always binary, while a Constant is always decimal", "A Variable is a flowchart shape, while a Constant is a Scratch backdrop", "A Variable deletes memory, while A Constant opens web browsers"], ans: 0 },
-      { round: "Cross-Unit Mastery", q: "How does a NOR Gate differ from a standard OR Gate?", opts: ["NOR Gate is an OR Gate followed by a NOT Gate (inverts the OR output)", "NOR Gate output is 1 when both inputs are 1, while OR Gate output is 0", "NOR Gate takes 10 inputs, while OR Gate takes 0 inputs", "NOR Gate works only with decimal numbers"], ans: 0 },
-      { round: "Cross-Unit Mastery", q: "What is the difference between <center> tag and <title> tag in HTML?", opts: ["<center> aligns page content to the middle of the screen, while <title> sets the title shown on the browser tab", "<center> changes text to bold, while <title> inserts a picture", "<center> closes the web page, while <title> opens history", "<center> is used in Word, while <title> is used in Scratch"], ans: 0 }
+      // --- UNIT 6: INTERNET ---
+      { round: "Unit 6: Internet", q: "What software tool is used to search for websites and information on the web?", opts: ["Web browser", "Search engine", "Word processor", "Media player"], ans: 1 },
+      { round: "Unit 6: Internet", q: "Which of the following is a popular web search engine?", opts: ["Microsoft Word", "Google", "Paint", "Scratch"], ans: 1 },
+      { round: "Unit 6: Internet", q: "What feature in a web browser saves frequently visited web addresses for quick access?", opts: ["History", "Bookmarks", "Downloads", "Trash"], ans: 1 },
+      { round: "Unit 6: Internet", q: "What browser feature keeps a log of all web pages you have previously visited?", opts: ["Bookmarks", "History", "Tabs", "Extensions"], ans: 1 },
+      { round: "Unit 6: Internet", q: "What is a clickable text or image that takes you to another web page?", opts: ["Hyperlink", "Scrollbar", "Title bar", "Taskbar"], ans: 0 },
+      { round: "Unit 6: Internet", q: "What allows you to open multiple web pages inside a single browser window?", opts: ["Windows", "Tabs", "Icons", "Menus"], ans: 1 },
+      { round: "Unit 6: Internet", q: "What language is used to create and structure web pages?", opts: ["Java", "HTML", "Python", "Scratch"], ans: 1 },
+      { round: "Unit 6: Internet", q: "Which HTML tag defines the main visible content of a web page?", opts: ["<head>", "<title>", "<body>", "<html"], ans: 2 },
+      { round: "Unit 6: Internet", q: "Which HTML tag is used to create a hyperlink?", opts: ["<img>", "<a>", "<p>", "<br>"], ans: 1 },
+      { round: "Unit 6: Internet", q: "Which HTML tag is used to insert an image into a web page?", opts: ["<img>", "<href>", "<title>", "<b>"], ans: 0 }
     ];
 
     let currentQIndex = 0;
@@ -330,33 +348,4 @@
         subtext.textContent = `${winnerNames} tied with ${topScore} Points!`;
       }
 
-      leaderboardBody.innerHTML = "";
-      const rankClasses = ["rank-1", "rank-2", "rank-3", "rank-4"];
-      const rankLabels = ["1st Place 🥇", "2nd Place 🥈", "3rd Place 🥉", "4th Place 🎗️"];
-
-      teamObjects.forEach((t, i) => {
-        const item = document.createElement("div");
-        item.className = `leaderboard-item ${rankClasses[i]}`;
-        item.innerHTML = `<span>${rankLabels[i]} — ${t.name}</span><span>${t.score} pts</span>`;
-        leaderboardBody.appendChild(item);
-      });
-
-      modal.style.display = "flex";
-    }
-
-    function closeWinnerModal() {
-      document.getElementById("winner-modal").style.display = "none";
-    }
-
-    // Keyboard Shortcuts
-    document.addEventListener('keydown', function(event) {
-      if (event.code === 'ArrowRight') nextQuestion();
-      if (event.code === 'ArrowLeft') prevQuestion();
-      if (event.code === 'Space') revealAnswer();
-    });
-
-    // Initialize Game
-    renderQuestion();
-  </script>
-</body>
-</html>
+      leaderboardBody.innerHTML =
